@@ -1,0 +1,70 @@
+
+    body {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow-x:scroll;
+    }
+    
+    html {
+      height: 100%;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .timeline-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+    }
+
+    @media (max-width: 768px) {
+      .timeline-line {
+        left: 20px;
+      }
+    }
+
+    .skill-badge {
+      transition: all 0.3s ease;
+    }
+
+    .skill-badge:hover {
+      transform: scale(1.1);
+    }
+
+    .hero-gradient {
+      background-image:url(backg.jpg);
+      background-repeat:initial;
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+    }
+
+    .section-gradient {
+      background: linear-gradient(180deg, #f8fafc 0%, #e0e7ff 100%);
+    }
+  .pp{
+    
+    width: 200px;
+  }
