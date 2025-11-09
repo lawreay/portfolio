@@ -707,8 +707,65 @@
        <h3 class="text-xl font-bold mb-2">Learn360</h3><a href="https://learn360.free.nf" target="_blank" rel="noopener noreferrer" class="text-blue-200 hover:text-white transition-colors">learn360.free.nf</a>
       </div>
      </div>
-     <div class="flex gap-6 justify-center"><a href="#" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-2xl transition-all"> 📘 </a> <a href="#" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-2xl transition-all"> 🐦 </a> <a href="#" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-2xl transition-all"> 💼 </a>
+     <div class="flex gap-6 justify-center w-full">
+       <form id="suggestion-form" class="w-full max-w-2xl flex gap-3 items-start" onsubmit="return false;">
+         <textarea id="suggestion-input" rows="3" placeholder="Share a suggestion or feedback..." class="w-full p-3 rounded-lg bg-white/10 text-white placeholder:text-white/70 focus:outline-none" ></textarea>
+         <div class="flex flex-col gap-2">
+           <button id="send-suggestion" type="button" class="px-4 py-2 bg-white text-blue-900 rounded-lg font-semibold hover:opacity-95">Send</button>
+           <button id="clear-suggestion" type="button" class="px-4 py-2 bg-transparent border border-white/20 text-white rounded-lg hover:bg-white/5">Clear</button>
+         </div>
+       </form>
      </div>
+     <script>
+     (function(){
+       const sendBtn = document.getElementById('send-suggestion');
+       const clearBtn = document.getElementById('clear-suggestion');
+       const input = document.getElementById('suggestion-input');
+
+       function openMailClient(subject, body) {
+         const href = 'mailto:lawreay1@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+         // open mail client
+         window.location.href = href;
+       }
+
+       sendBtn?.addEventListener('click', () => {
+         const text = input.value.trim();
+         if (!text) {
+           input.focus();
+           input.classList.add('ring', 'ring-red-400');
+           setTimeout(()=> input.classList.remove('ring','ring-red-400'), 1600);
+           return;
+         }
+
+         const subject = 'Suggestion from portfolio site';
+         const body = `Suggestion:\n\n${text}\n\n---\nSent from Lawrence's portfolio`;
+         // feedback
+         sendBtn.disabled = true;
+         sendBtn.textContent = 'Opening mail...';
+         openMailClient(subject, body);
+
+         // restore state after a short delay
+         setTimeout(() => {
+           sendBtn.disabled = false;
+           sendBtn.textContent = 'Send';
+           input.value = '';
+         }, 2500);
+       });
+
+       clearBtn?.addEventListener('click', () => {
+         input.value = '';
+         input.focus();
+       });
+
+       // allow Ctrl/Cmd+Enter to send
+       input?.addEventListener('keydown', (e) => {
+         if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+           e.preventDefault();
+           sendBtn.click();
+         }
+       });
+     })();
+     </script>
     </div>
    </section><!-- Footer -->
    <footer class="bg-gray-900 text-gray-400 py-8 px-6 text-center">
