@@ -60,6 +60,31 @@
       margin-right: 8px;
     }
 
+    /* Promotional popup animations */
+    #promo-popup {
+      transition: opacity 0.3s ease-out;
+    }
+    #promo-popup:not(.hidden) {
+      animation: fadeIn 0.4s ease-out;
+    }
+    #promo-popup .glasss-card {
+      animation: slideUp 0.5s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideUp {
+      from { 
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to { 
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     @media (max-width: 600px) {
       .glass-card {
         padding: 20px;
@@ -829,11 +854,92 @@
         hamburger.classList.remove('active');
       }
     });
+
+    // Auto-collapse header on scroll
+    let lastScroll = 0;
+    const header = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll <= 0) {
+        header.classList.remove('collapsed');
+        return;
+      }
+      
+      if (currentScroll > lastScroll && !header.classList.contains('collapsed')) {
+        // Scrolling down & header is visible
+        header.classList.add('collapsed');
+      } else if (currentScroll < lastScroll && header.classList.contains('collapsed')) {
+        // Scrolling up & header is hidden
+        header.classList.remove('collapsed');
+      }
+      lastScroll = currentScroll;
+    });
+  });
+</script>
+
+<!-- Promotional Popup -->
+<div id="promo-popup" class="fixed inset-0 z-[2000] hidden items-center justify-center" aria-hidden="true">
+  <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" data-close></div>
+  <div class="relative w-full max-w-lg mx-4 glasss-card" role="dialog">
+    <button class="absolute right-4 top-4 text-white/80 hover:text-white" onclick="closePromo()">
+      <span class="sr-only">Close</span>
+      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    
+    <div class="p-6 text-center">
+      <h2 class="text-2xl font-bold mb-4 text-white">Need a Professional Website?</h2>
+      <p class="text-white/90 mb-6">
+        Get a custom-built, responsive website at an affordable price. I specialize in:
+      </p>
+      <ul class="text-left text-white/90 mb-6 space-y-2">
+        <li>✓ Modern, responsive designs</li>
+        <li>✓ E-commerce solutions</li>
+        <li>✓ Business websites</li>
+        <li>✓ Portfolio sites</li>
+      </ul>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="mailto:lawreay1@gmail.com?subject=Website%20Development%20Inquiry&body=Hi%20Lawrence%2C%0A%0AI'm%20interested%20in%20getting%20a%20website%20built.%20" 
+           class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-gradient-to-r from-purple-500 to-indigo-600 rounded-lg hover:opacity-90 transition-opacity">
+          📧 Email Me
+        </a>
+        <a href="https://wa.me/265993147700?text=Hi%20Lawrence%2C%20I'm%20interested%20in%20getting%20a%20website%20built."
+           target="_blank" rel="noopener"
+           class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white border border-white/20 rounded-lg hover:bg-white/10 transition-colors">
+          💬 WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Promotional popup timer
+  setTimeout(() => {
+    const popup = document.getElementById('promo-popup');
+    if (popup) {
+      popup.classList.remove('hidden');
+      popup.classList.add('flex');
+    }
+  }, 30000); // 30 seconds
+
+  function closePromo() {
+    const popup = document.getElementById('promo-popup');
+    if (popup) {
+      popup.classList.add('hidden');
+      popup.classList.remove('flex');
+    }
+  }
+
+  // Close popup when clicking backdrop
+  document.querySelector('[data-close]')?.addEventListener('click', closePromo);
+
+  // Close popup with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closePromo();
   });
 </script>
 </body>
-
 </html>
-
-
-
