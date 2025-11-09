@@ -787,17 +787,42 @@
  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99ad82e9669d73b0',t:'MTc2MjUyNTY0Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.getElementById('hamburger-menu');
-    const navMenu = document.getElementById('nav-menu');
-    const themeBtn = document.getElementById('theme-toggle');
-    const backBtn = document.getElementById('back-to-top');
+  const hamburger = document.getElementById('hamburger-menu');
+  const navMenu = document.getElementById('nav-menu');
+  const header = document.querySelector('.navbar');
+  const themeBtn = document.getElementById('theme-toggle');
+  const backBtn = document.getElementById('back-to-top');
 
     // Hamburger menu toggle
     if (hamburger && navMenu) {
       hamburger.addEventListener('click', function(e) {
         e.stopPropagation();
-        navMenu.classList.toggle('active');
+        const opened = navMenu.classList.toggle('active');
         hamburger.classList.toggle('active');
+        // Ensure header stays visible while the mobile menu is open
+        if (opened && header) {
+          header.classList.remove('collapsed');
+        }
+      });
+    }
+
+    // Collapse mobile menu and auto-collapse header when a nav link is clicked
+    if (navMenu) {
+      const navLinks = navMenu.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          // close mobile menu if open
+          if (navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+          }
+          if (hamburger && hamburger.classList.contains('active')) {
+            hamburger.classList.remove('active');
+          }
+          // On small screens, auto-collapse the header shortly after click so the user can view content
+          if (window.innerWidth <= 1024 && header) {
+            setTimeout(() => header.classList.add('collapsed'), 350);
+          }
+        });
       });
     }
 
@@ -854,26 +879,63 @@
         hamburger.classList.remove('active');
       }
     });
+    // Auto-collapse header on scroll and enhanced behavior
+    (function() {
+  let lastScroll = 0;
+  let collapseTimeout;
 
-    // Auto-collapse header on scroll
-    let lastScroll = 0;
-    const header = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.pageYOffset;
-      if (currentScroll <= 0) {
-        header.classList.remove('collapsed');
-        return;
+      function scheduleNavCollapse() {
+        if (!header) return;
+        clearTimeout(collapseTimeout);
+        collapseTimeout = setTimeout(() => {
+          if (window.pageYOffset > 100) {
+            header.classList.add('collapsed');
+          }
+        }, 3000);
       }
-      
-      if (currentScroll > lastScroll && !header.classList.contains('collapsed')) {
-        // Scrolling down & header is visible
-        header.classList.add('collapsed');
-      } else if (currentScroll < lastScroll && header.classList.contains('collapsed')) {
-        // Scrolling up & header is hidden
-        header.classList.remove('collapsed');
+
+      // scroll handling
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        if (!header) return;
+        if (currentScroll <= 0) {
+          header.classList.remove('collapsed');
+          clearTimeout(collapseTimeout);
+          return;
+        }
+        if (currentScroll > lastScroll && !header.classList.contains('collapsed')) {
+          header.classList.add('collapsed');
+        } else if (currentScroll < lastScroll && header.classList.contains('collapsed')) {
+          header.classList.remove('collapsed');
+          scheduleNavCollapse();
+        }
+        lastScroll = currentScroll;
+      });
+
+      // show when mouse near top
+      document.addEventListener('mousemove', (e) => {
+        if (e.clientY <= 60 && header) {
+          header.classList.remove('collapsed');
+          scheduleNavCollapse();
+        }
+      });
+
+      // interactions
+      if (header) {
+        header.addEventListener('mouseenter', () => {
+          header.classList.remove('collapsed');
+          scheduleNavCollapse();
+        });
+
+        header.addEventListener('click', () => {
+          scheduleNavCollapse();
+        });
+
+        // initial schedule
+        scheduleNavCollapse();
       }
-      lastScroll = currentScroll;
-    });
+    })();
+    
   });
 </script>
 
