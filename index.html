@@ -1154,7 +1154,7 @@
   });
 </script>
 
-<!-- Promotional Popup -->
+
 <div id="promo-popup" class="fixed inset-0 z-[2000] hidden items-center justify-center" aria-hidden="true">
   <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" data-close></div>
   <div class="relative w-full max-w-lg mx-4 glasss-card" role="dialog">
@@ -1193,14 +1193,14 @@
 </div>
 
 <script>
-  // Promotional popup timer
+  
   setTimeout(() => {
     const popup = document.getElementById('promo-popup');
     if (popup) {
       popup.classList.remove('hidden');
       popup.classList.add('flex');
     }
-  }, 30000); // 30 seconds
+  }, 50000); // 30 seconds
 
   function closePromo() {
     const popup = document.getElementById('promo-popup');
@@ -1210,7 +1210,7 @@
     }
   }
 
-  // Close popup when clicking backdrop
+
   document.querySelector('[data-close]')?.addEventListener('click', closePromo);
 
   // Close popup with Escape key
