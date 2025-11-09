@@ -60,7 +60,7 @@
       margin-right: 8px;
     }
 
-    /* Promotional popup animations */
+  promo-popup
     #promo-popup {
       transition: opacity 0.3s ease-out;
     }
@@ -99,7 +99,7 @@
       }
     }
     
-    /* make profile image responsive and circular */
+   
     .my_PP{
       width: 180px;
       height: auto;
@@ -1221,21 +1221,21 @@
  
 <!-- Mini floating chatbot (client-side, rule-based) -->
 <style>
-  /* Mini-chat styles */
+
   .mini-chat-button { position: fixed; right: 20px; bottom: 20px; width: 56px; height: 56px; border-radius: 999px; background: linear-gradient(135deg,#667eea,#764ba2); color: #fff; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(2,6,23,0.4); cursor:pointer; z-index:2200 }
-  .mini-chat-panel { position: fixed; right: 20px; bottom: 88px; width: 320px; max-width: calc(100% - 40px); background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); border-radius: 12px; box-shadow: 0 20px 60px rgba(2,6,23,0.6); z-index:2200; color: #fff; overflow:hidden; display:none; }
+  .mini-chat-panel { position: fixed; right: 20px; bottom: 88px; width: 320px; max-width: calc(100% - 40px); background: linear-gradient(180deg, rgba(0, 1, 58, 0.911), rgba(74, 104, 236, 0.747)); border-radius: 12px; box-shadow: 0 20px 60px rgb(2, 6, 23); z-index:2200; color: #fff; overflow:hidden; display:none; }
   .mini-chat-panel.open { display:block; }
-  .mini-chat-header { display:flex; align-items:center; justify-content:space-between; padding:10px 12px; border-bottom:1px solid rgba(255,255,255,0.04); }
+  .mini-chat-header { display:flex; align-items:center; justify-content:space-between; padding:10px 12px; border-bottom:1px solid rgb(255, 255, 255); }
   .mini-chat-title { font-weight:700; font-size:14px; }
   .mini-chat-body { max-height:260px; overflow:auto; padding:12px; font-size:14px; line-height:1.4; }
   .mini-chat-message { margin:8px 0; padding:8px 10px; border-radius:8px; display:inline-block; max-width:100%; }
-  .mini-chat-message.user { background: rgba(255,255,255,0.08); color:#fff; align-self:flex-end; }
-  .mini-chat-message.bot { background: rgba(102,126,234,0.12); color:#fff; }
-  .mini-chat-input { display:flex; gap:8px; padding:10px; border-top:1px solid rgba(255,255,255,0.04); }
-  .mini-chat-input textarea { flex:1; resize:none; padding:8px; border-radius:8px; background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.06); min-height:40px; }
+  .mini-chat-message.user { background: rgb(0, 50, 100); color:#ffffff; align-self:flex-end; }
+  .mini-chat-message.bot { background: rgba(102, 126, 234, 0.932); color:#fff; }
+  .mini-chat-input { display:flex; gap:8px; padding:10px; border-top:1px solid rgb(255, 255, 255); }
+  .mini-chat-input textarea { flex:1; resize:none; padding:8px; border-radius:8px; background:transparent; color:#fff; border:1px solid rgba(255, 255, 255, 0.233); min-height:40px; }
   .mini-chat-input button { padding:8px 10px; border-radius:8px; background:#667eea; color:#fff; border:none; cursor:pointer; }
   .mini-chat-suggestions { display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
-  .mini-chat-suggestion { background: rgba(255,255,255,0.04); padding:6px 8px; border-radius:999px; font-size:13px; cursor:pointer; }
+  .mini-chat-suggestion { background-color: rgba(74, 104, 236, 0.747); padding:6px 8px; border-radius:999px; font-size:13px; cursor:pointer; }
   @media (max-width:420px){ .mini-chat-panel{ right:10px; left:10px; width:auto; bottom:80px } }
 </style>
 
@@ -1274,7 +1274,7 @@
     const input = document.getElementById('mini-chat-input');
     const body = document.getElementById('mini-chat-body');
 
-    // simple knowledge base
+   
     const kb = [
       { keys: ['who','you','about me'], answer: "I'm Lawrence Phuka Chikapa — an ICT Educator and Creative Technologist. I build Learn360 and create websites, animations, and educational content." },
       { keys: ['learn360','learn 360'], answer: "Learn360 is a free digital education platform I founded to provide courses and videos for learners across Malawi. Visit learn360.free.nf for the demo." },
@@ -1298,7 +1298,7 @@
           if (t.includes(k)) return item.answer;
         }
       }
-      // fallback: short site summary
+     
       return "I can tell you about Lawrence (background, projects, contact) or the Learn360 platform. Try: 'Who are you?', 'Projects', 'Learn360', or 'Contact'.";
     }
 
@@ -1306,11 +1306,11 @@
       if (!text) return;
       addMessage(text,'user');
       const ans = findAnswer(text);
-      // simulate typing delay
+      
       setTimeout(()=> addMessage(ans,'bot'), 500);
     }
 
-    // Open/close handlers
+   
     btn.addEventListener('click', ()=> panel.classList.toggle('open'));
     closeBtn.addEventListener('click', ()=> panel.classList.remove('open'));
 
@@ -1325,13 +1325,12 @@
       if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendBtn.click(); }
     });
 
-    // suggestion chips
     document.querySelectorAll('.mini-chat-suggestion').forEach(el=> el.addEventListener('click', ()=>{
       const q = el.getAttribute('data-q');
       handleSend(q);
     }));
 
-    // polite intro message
+    
     setTimeout(()=>{
       addMessage("Hi — I'm a quick site assistant. Ask me about Lawrence, projects, skills or contact details.", 'bot');
     }, 1200);
