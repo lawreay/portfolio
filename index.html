@@ -389,7 +389,7 @@
 
 
 
-                                                  <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50">
+                                                  <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer">
                                                   <div class="text-4xl mb-3">
                                                     💻
                                                   </div>
@@ -449,7 +449,7 @@
                                                   <div class="text-4xl mb-3">
                                                     📱
                                                   </div>
-                                                  <p class="font-semibold text-gray-800">Web Development</p>
+                                                  <p class="font-semibold text-gray-800">Web Application Development</p>
                                                   </div>
 
 
@@ -473,6 +473,165 @@
                                                   </div>
                                                 </div>
                                                 </div>
+
+                                                <!-- Skills Info Popup -->
+                                                <div id="skills-popup" class="fixed inset-0 z-[2001] hidden items-center justify-center">
+                                                  <div class="skills-popup-backdrop absolute inset-0 bg-slate-900/80 backdrop-blur-md"></div>
+                                                  <div class="skills-popup-content relative w-full max-w-2xl mx-4 glasss-card">
+                                                    <button class="absolute right-4 top-4 text-white/80 hover:text-white text-xl" onclick="closeSkillsPopup()">×</button>
+                                                    
+                                                    <div class="p-6">
+                                                      <h3 class="text-2xl font-bold mb-6 text-white skill-popup-title"></h3>
+                                                      <div class="space-y-4 text-white/90 skill-popup-content"></div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+
+                                                <script>
+                                                const skillsInfo = {
+                                                  'HTML, CSS & JavaSript': {
+                                                    title: 'Frontend Development Expertise',
+                                                    details: [
+                                                      'Expert in modern HTML5, CSS3, and JavaScript development',
+                                                      'Experience with responsive design and mobile-first approaches',
+                                                      'Proficient in CSS frameworks like Tailwind CSS and animations',
+                                                      'Strong understanding of JavaScript ES6+ features and DOM manipulation',
+                                                      'Building interactive and user-friendly web interfaces'
+                                                    ]
+                                                  },
+                                                  'Network Security': {
+                                                    title: 'Network & Security Management',
+                                                    details: [
+                                                      'Implementation of network security protocols and best practices',
+                                                      'Firewall configuration and maintenance',
+                                                      'Security auditing and vulnerability assessment',
+                                                      'Data protection and encryption strategies',
+                                                      'Network monitoring and incident response'
+                                                    ]
+                                                  },
+                                                  'UI/UX Design': {
+                                                    title: 'User Interface & Experience Design',
+                                                    details: [
+                                                      'Creating intuitive and user-friendly interfaces',
+                                                      'User research and usability testing',
+                                                      'Wireframing and prototyping',
+                                                      'Visual design and brand consistency',
+                                                      'Accessibility and inclusive design principles'
+                                                    ]
+                                                  },
+                                                  'Media Production': {
+                                                    title: 'Digital Media Production',
+                                                    details: [
+                                                      'Video production and editing',
+                                                      'Educational content creation',
+                                                      'Graphics design and visual assets',
+                                                      'Audio production and editing',
+                                                      'Multi-format content optimization'
+                                                    ]
+                                                  },
+                                                  'Educational Tech': {
+                                                    title: 'Educational Technology',
+                                                    details: [
+                                                      'Learning Management System (LMS) implementation',
+                                                      'Digital curriculum development',
+                                                      'E-learning platform management',
+                                                      'Interactive learning tools integration',
+                                                      'Educational software training and support'
+                                                    ]
+                                                  },
+                                                  'Technical Support': {
+                                                    title: 'Technical Support & Maintenance',
+                                                    details: [
+                                                      'Hardware and software troubleshooting',
+                                                      'System maintenance and updates',
+                                                      'User training and documentation',
+                                                      'IT infrastructure management',
+                                                      'Remote and on-site technical assistance'
+                                                    ]
+                                                  },
+                                                  'Web Application Development': {
+                                                    title: 'Web Application Development',
+                                                    details: [
+                                                      'Full-stack application architecture and development',
+                                                      'Progressive Web Apps (PWAs) creation',
+                                                      'API design and integration',
+                                                      'Database design and optimization',
+                                                      'Cloud deployment and scalability solutions'
+                                                    ]
+                                                  },
+                                                  'Animation': {
+                                                    title: 'Digital Animation',
+                                                    details: [
+                                                      'Motion graphics and visual effects',
+                                                      'Educational animation creation',
+                                                      'Character animation and storytelling',
+                                                      'Web and UI animations',
+                                                      '2D and 3D animation techniques'
+                                                    ]
+                                                  },
+                                                  'WordPress & Dive': {
+                                                    title: 'WordPress & Divi Development',
+                                                    details: [
+                                                      'Custom WordPress theme development',
+                                                      'Divi theme expertise and customization',
+                                                      'Plugin integration and optimization',
+                                                      'E-commerce with WooCommerce',
+                                                      'Performance and security optimization'
+                                                    ]
+                                                  }
+                                                };
+
+                                                function showSkillDetails(skillName) {
+                                                  const popup = document.getElementById('skills-popup');
+                                                  const titleEl = popup.querySelector('.skill-popup-title');
+                                                  const contentEl = popup.querySelector('.skill-popup-content');
+                                                  
+                                                  const skill = skillsInfo[skillName];
+                                                  if (!skill) return;
+
+                                                  titleEl.textContent = skill.title;
+                                                  contentEl.innerHTML = `
+                                                    <ul class="list-none p-0 m-0 space-y-3">
+                                                      ${skill.details.map(detail => `
+                                                        <li class="pl-6 relative">
+                                                          <span class="absolute left-0 text-purple-400">→</span>
+                                                          ${detail}
+                                                        </li>
+                                                      `).join('')}
+                                                    </ul>
+                                                  `;
+                                                  
+                                                  popup.classList.remove('hidden');
+                                                  popup.classList.add('flex');
+                                                  document.body.style.overflow = 'hidden';
+                                                }
+
+                                                function closeSkillsPopup() {
+                                                  const popup = document.getElementById('skills-popup');
+                                                  popup.classList.add('hidden');
+                                                  popup.classList.remove('flex');
+                                                  document.body.style.overflow = '';
+                                                }
+
+                                                // Add click handlers to skill badges
+                                                document.querySelectorAll('.skill-badge').forEach(badge => {
+                                                  badge.style.cursor = 'pointer';
+                                                  badge.addEventListener('click', () => {
+                                                    const skillName = badge.querySelector('p').textContent;
+                                                    showSkillDetails(skillName);
+                                                  });
+                                                });
+
+                                                // Close popup when clicking backdrop
+                                                document.querySelector('.skills-popup-backdrop')?.addEventListener('click', closeSkillsPopup);
+
+                                                // Close popup with Escape key
+                                                document.addEventListener('keydown', (e) => {
+                                                  if (e.key === 'Escape') {
+                                                    closeSkillsPopup();
+                                                  }
+                                                });
+                                                </script>
 
 
 
