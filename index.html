@@ -3,7 +3,7 @@
  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lawrence Phuka Chikapa</title>
+  <title>LAWREAY Portfolio - Lawrence Phuka Chikapa</title>
 <link rel="shortcut icon" href="MYphoto.png" type="image/x-icon">
   
   <script src="https://cdn.tailwindcss.com"></script>
@@ -60,31 +60,6 @@
       margin-right: 8px;
     }
 
-  promo-popup
-    #promo-popup {
-      transition: opacity 0.3s ease-out;
-    }
-    #promo-popup:not(.hidden) {
-      animation: fadeIn 0.4s ease-out;
-    }
-    #promo-popup .glasss-card {
-      animation: slideUp 0.5s ease-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes slideUp {
-      from { 
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to { 
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
     @media (max-width: 600px) {
       .glass-card {
         padding: 20px;
@@ -99,7 +74,7 @@
       }
     }
     
-   
+  
     .my_PP{
       width: 180px;
       height: auto;
@@ -113,7 +88,6 @@
     </style>
 
     <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="images.css">
  </head>
  <body class="font-sans">
   <div id="portfolio-container"><!-- Hero Section -->
@@ -139,10 +113,6 @@
         <img src="my logo.png" alt="LAWREAY Logo" class="nav-logo">
         <span class="logo-text">LAWREAY</span>
       </a>
-      <div class="nav-actions">
-      <!--  <button id="theme-toggle" class="theme-toggle" aria-pressed="false" title="Toggle theme">🌙</button>-->
-        <button id="back-to-top" class="back-to-top" title="Back to top">↑</button>
-      </div>
       <button class="hamburger" id="hamburger-menu">
         <span></span>
         <span></span>
@@ -153,13 +123,7 @@
         <li><a href="#about"> <button class="header_btn">About</button></a></li>
         <li><a href="#projects"> <button class="header_btn">Projects</button></a></li>
         <li><a href="#contact"><button class="header_btn">Contact</button></a></li>
-        <li><a href="https://learn360.free.nf/" target="_blank"><button class="header_btn">Learn360</button></a></li>
-        
-        <li><a href="https://lawreay.github.io/learn360-log-in-page-demo/" target="_blank"><button class="header_btn">Demo</button></a></li>
-        <li><a href="https://lawreay.github.io/Ntonda-Online-Quiz-System-/" target="_blank"><button class="header_btn">Quiz System</button></a></li>
-    
-
-        <li><a class="download" href="cv.jpeg" download="Lawrence Phuka CV"><Button>Download My CV</Button></a></li>
+        <li><a class="download" href="LAWREAY PHUKA CURRICULUM VITAE.pdf" download="Lawrence Phuka CV"><Button>Download My CV</Button></a></li>
       </ul>
     </div>
       
@@ -199,7 +163,7 @@
      <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 gradient-text">About Me</h2>
      <div class="glass-card rounded-3xl p-8 md:p-12">
       <p id="about-text" class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">I'm Lawrence Phuka Chikapa, founder of Learn360 — a free digital education platform dedicated to empowering underserved communities across Malawi. With a deep passion for accessible education, creative design, and local empowerment, I combine technical expertise with a vision for social impact.</p>
-      <p class="text-lg md:text-xl text-gray-700 leading-relaxed">As an ICT educator, I bridge the gap between technology and education, creating innovative solutions that make quality learning accessible to all Malawians, regardless of their economic background.</p>
+      <p class="text-lg md:text-xl text-gray-700 leading-relaxed">As an ICT educator at Malawi Adventist University and a creative technologist, I bridge the gap between technology and education, creating innovative solutions that make quality learning accessible to all Malawians, regardless of their economic background.</p>
      </div>
     </div>
 
@@ -215,6 +179,7 @@
      <div class="glass-card">
     <h2>👤 Lawrence Phuka Chikapa</h2>
     <ul class="details">
+      <li><span class="emoji">🎂</span><strong>Date of Birth:</strong> 10 April 2004</li>
       <li><span class="emoji">🏡</span><strong>Home of Origin:</strong> Ntcheu</li>
       <li><span class="emoji">🌍</span><strong>Nationality:</strong> Malawian</li>
       <li><span class="emoji">🙏</span><strong>Religion:</strong> Christian</li>
@@ -292,22 +257,7 @@
    <section id="projects" class="section-gradient py-20 px-6">
     <div class="max-w-6xl mx-auto">
      <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Featured Projects</h2>
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Project 1 -->
-      <a href="https://learn360.free.nf" target="_blank">
       <div class="glass-card rounded-2xl overflow-hidden">
        <div class="project-card-image">
         <img src="learn360.png" alt="Learn360 Platform" class="project-image">
@@ -315,43 +265,21 @@
        <div class="p-6">
         <h3 id="proj1-title" class="text-xl font-bold text-gray-800 mb-3">Learn360 Platform</h3>
         <p id="proj1-desc" class="text-gray-700 mb-4">Comprehensive digital education platform offering free courses, video lessons, and interactive content for Malawian students and lifelong learners.</p>
-        <div class="flex flex-wrap gap-2"> <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">WordPress</span> <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">LMS</span> <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm">Divi</span><button class="download">View Demo</button>
+        <div class="flex flex-wrap gap-2"><span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">Html</Html></span> <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">WordPress</span> <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">LMS</span> <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm">Divi</span>
         </div>
        </div>
-
-
-
-
-
-
-
-
-      </div></a><!-- Project 2 -->
-      <a href="https://lawreay.github.io/Ntonda-Online-Quiz-System-/"><div class="glass-card rounded-2xl overflow-hidden">
+      </div><!-- Project 2 -->
+      <div class="glass-card rounded-2xl overflow-hidden">
        <div class="project-card-image">
         <img src="1.jpg" alt="Ntonda Quiz System" class="project-image">
        </div>
        <div class="p-6">
         <h3 id="proj2-title" class="text-xl font-bold text-gray-800 mb-3">Ntonda Online Quiz System</h3>
         <p id="proj2-desc" class="text-gray-700 mb-4">Interactive assessment platform enabling students to test their knowledge with instant feedback and progress tracking across multiple subjects.</p>
-        <div class="flex flex-wrap gap-2"><span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">PHP</span> <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">MySQL</span> <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">JavaScript</span> <button class="download">View Demo</button>
+        <div class="flex flex-wrap gap-2"><span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">PHP</span> <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">MySQL</span> <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">JavaScript</span>
         </div>
        </div>
-      </div></a>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <a href="https://lawreay.github.io/learn360-log-in-page-demo/">
-      <!-- Project 3 -->
+      </div><!-- Project 3 -->
       <div class="glass-card rounded-2xl overflow-hidden">
        <div class="project-card-image">
         <img src="2019-polar-lights-background.jpg" alt="Educational Animation" class="project-image">
@@ -360,278 +288,108 @@
         <h3 id="proj3-title" class="text-xl font-bold text-gray-800 mb-3">Educational Animation Content</h3>
         <p id="proj3-desc" class="text-gray-700 mb-4">Engaging animated videos explaining complex concepts in science, mathematics, and technology, making learning accessible and fun for all ages.</p>
         <div class="flex flex-wrap gap-2"><span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">Animation</span> <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Video Editing</span> <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">Design</span>
-        <button class="download">View Demo</button></div>
+        </div>
        </div>
       </div>
      </div>
-    </div></a>
-
-
-
-
-
-
-
-
-
-
-
+    </div>
    </section><!-- Skills Grid -->
    <section id="skills" class="py-20 px-6 bg-white">
 
 
 
 
-                                                <div class="max-w-6xl mx-auto border-2 ">
-                                                <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Core Competencies</h2>
-                                                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div class="max-w-6xl mx-auto border-2 ">
+     <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Core Competencies</h2>
+     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
 
 
 
-                                                  <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer">
-                                                  <div class="text-4xl mb-3">
-                                                    💻
-                                                  </div>
-                                                  <p class="font-semibold text-gray-800">HTML, CSS & JavaSript</p>
-                                                  </div>
+      <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50">
+       <div class="text-4xl mb-3">
+        💻
+       </div>
+       <p class="font-semibold text-gray-800">HTML, CSS & JavaSript</p>
+      </div>
 
 
 
 
-                                                  <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50">
-                                                  <div class="text-4xl mb-3">
-                                                    🔒
-                                                  </div>
-                                                  <p class="font-semibold text-gray-800">Network Security</p>
-                                                  </div>
+      <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50">
+       <div class="text-4xl mb-3">
+        🔒
+       </div>
+       <p class="font-semibold text-gray-800">Network Security</p>
+      </div>
 
 
 
 
-                                                  <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50">
-                                                  <div class="text-4xl mb-3">
-                                                    🎨
-                                                  </div>
-                                                  <p class="font-semibold text-gray-800">UI/UX Design</p>
-                                                  </div>
+      <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50">
+       <div class="text-4xl mb-3">
+        🎨
+       </div>
+       <p class="font-semibold text-gray-800">UI/UX Design</p>
+      </div>
 
 
 
-                                                  <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50">
-                                                  <div class="text-4xl mb-3">
-                                                    📹
-                                                  </div>
-                                                  <p class="font-semibold text-gray-800">Media Production</p>
-                                                  </div>
+      <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50">
+       <div class="text-4xl mb-3">
+        📹
+       </div>
+       <p class="font-semibold text-gray-800">Media Production</p>
+      </div>
 
 
 
-                                                  <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50">
-                                                  <div class="text-4xl mb-3">
-                                                    🎓
-                                                  </div>
-                                                  <p class="font-semibold text-gray-800">Educational Tech</p>
-                                                  </div>
+      <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50">
+       <div class="text-4xl mb-3">
+        🎓
+       </div>
+       <p class="font-semibold text-gray-800">Educational Tech</p>
+      </div>
 
 
 
-                                                  <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50">
-                                                  <div class="text-4xl mb-3">
-                                                    ⚙️
-                                                  </div>
-                                                  <p class="font-semibold text-gray-800">Technical Support</p>
-                                                  </div>
+      <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50">
+       <div class="text-4xl mb-3">
+        ⚙️
+       </div>
+       <p class="font-semibold text-gray-800">Technical Support</p>
+      </div>
 
 
 
-                                                  <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50">
-                                                  <div class="text-4xl mb-3">
-                                                    📱
-                                                  </div>
-                                                  <p class="font-semibold text-gray-800">Web Application Development</p>
-                                                  </div>
-
-
-
-
-                                                  <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50">
-                                                  <div class="text-4xl mb-3">
-                                                    🎬
-                                                  </div>
-                                                  <p class="font-semibold text-gray-800">Animation</p>
-                                                  </div>
+      <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50">
+       <div class="text-4xl mb-3">
+        📱
+       </div>
+       <p class="font-semibold text-gray-800">Web Development</p>
+      </div>
 
 
 
 
-                                                  <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50">
-                                                  <div class="text-4xl mb-3">
-                                                    🌐
-                                                  </div>
-                                                  <p class="font-semibold text-gray-800">WordPress & Dive</p>
-                                                  </div>
-                                                </div>
-                                                </div>
+      <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50">
+       <div class="text-4xl mb-3">
+        🎬
+       </div>
+       <p class="font-semibold text-gray-800">Animation</p>
+      </div>
 
-                                                <!-- Skills Info Popup -->
-                                                <div id="skills-popup" class="fixed inset-0 z-[2001] hidden items-center justify-center">
-                                                  <div class="skills-popup-backdrop absolute inset-0 bg-slate-900/80 backdrop-blur-md"></div>
-                                                  <div class="skills-popup-content relative w-full max-w-2xl mx-4 glasss-card">
-                                                    <button class="absolute right-4 top-4 text-white/80 hover:text-white text-xl" onclick="closeSkillsPopup()">×</button>
-                                                    
-                                                    <div class="p-6">
-                                                      <h3 class="text-2xl font-bold mb-6 text-white skill-popup-title"></h3>
-                                                      <div class="space-y-4 text-white/90 skill-popup-content"></div>
-                                                    </div>
-                                                  </div>
-                                                </div>
 
-                                                <script>
-                                                const skillsInfo = {
-                                                  'HTML, CSS & JavaSript': {
-                                                    title: 'Frontend Development Expertise',
-                                                    details: [
-                                                      'Expert in modern HTML5, CSS3, and JavaScript development',
-                                                      'Experience with responsive design and mobile-first approaches',
-                                                      'Proficient in CSS frameworks like Tailwind CSS and animations',
-                                                      'Strong understanding of JavaScript ES6+ features and DOM manipulation',
-                                                      'Building interactive and user-friendly web interfaces'
-                                                    ]
-                                                  },
-                                                  'Network Security': {
-                                                    title: 'Network & Security Management',
-                                                    details: [
-                                                      'Implementation of network security protocols and best practices',
-                                                      'Firewall configuration and maintenance',
-                                                      'Security auditing and vulnerability assessment',
-                                                      'Data protection and encryption strategies',
-                                                      'Network monitoring and incident response'
-                                                    ]
-                                                  },
-                                                  'UI/UX Design': {
-                                                    title: 'User Interface & Experience Design',
-                                                    details: [
-                                                      'Creating intuitive and user-friendly interfaces',
-                                                      'User research and usability testing',
-                                                      'Wireframing and prototyping',
-                                                      'Visual design and brand consistency',
-                                                      'Accessibility and inclusive design principles'
-                                                    ]
-                                                  },
-                                                  'Media Production': {
-                                                    title: 'Digital Media Production',
-                                                    details: [
-                                                      'Video production and editing',
-                                                      'Educational content creation',
-                                                      'Graphics design and visual assets',
-                                                      'Audio production and editing',
-                                                      'Multi-format content optimization'
-                                                    ]
-                                                  },
-                                                  'Educational Tech': {
-                                                    title: 'Educational Technology',
-                                                    details: [
-                                                      'Learning Management System (LMS) implementation',
-                                                      'Digital curriculum development',
-                                                      'E-learning platform management',
-                                                      'Interactive learning tools integration',
-                                                      'Educational software training and support'
-                                                    ]
-                                                  },
-                                                  'Technical Support': {
-                                                    title: 'Technical Support & Maintenance',
-                                                    details: [
-                                                      'Hardware and software troubleshooting',
-                                                      'System maintenance and updates',
-                                                      'User training and documentation',
-                                                      'IT infrastructure management',
-                                                      'Remote and on-site technical assistance'
-                                                    ]
-                                                  },
-                                                  'Web Application Development': {
-                                                    title: 'Web Application Development',
-                                                    details: [
-                                                      'Full-stack application architecture and development',
-                                                      'Progressive Web Apps (PWAs) creation',
-                                                      'API design and integration',
-                                                      'Database design and optimization',
-                                                      'Cloud deployment and scalability solutions'
-                                                    ]
-                                                  },
-                                                  'Animation': {
-                                                    title: 'Digital Animation',
-                                                    details: [
-                                                      'Motion graphics and visual effects',
-                                                      'Educational animation creation',
-                                                      'Character animation and storytelling',
-                                                      'Web and UI animations',
-                                                      '2D and 3D animation techniques'
-                                                    ]
-                                                  },
-                                                  'WordPress & Dive': {
-                                                    title: 'WordPress & Divi Development',
-                                                    details: [
-                                                      'Custom WordPress theme development',
-                                                      'Divi theme expertise and customization',
-                                                      'Plugin integration and optimization',
-                                                      'E-commerce with WooCommerce',
-                                                      'Performance and security optimization'
-                                                    ]
-                                                  }
-                                                };
 
-                                                function showSkillDetails(skillName) {
-                                                  const popup = document.getElementById('skills-popup');
-                                                  const titleEl = popup.querySelector('.skill-popup-title');
-                                                  const contentEl = popup.querySelector('.skill-popup-content');
-                                                  
-                                                  const skill = skillsInfo[skillName];
-                                                  if (!skill) return;
 
-                                                  titleEl.textContent = skill.title;
-                                                  contentEl.innerHTML = `
-                                                    <ul class="list-none p-0 m-0 space-y-3">
-                                                      ${skill.details.map(detail => `
-                                                        <li class="pl-6 relative">
-                                                          <span class="absolute left-0 text-purple-400">→</span>
-                                                          ${detail}
-                                                        </li>
-                                                      `).join('')}
-                                                    </ul>
-                                                  `;
-                                                  
-                                                  popup.classList.remove('hidden');
-                                                  popup.classList.add('flex');
-                                                  document.body.style.overflow = 'hidden';
-                                                }
-
-                                                function closeSkillsPopup() {
-                                                  const popup = document.getElementById('skills-popup');
-                                                  popup.classList.add('hidden');
-                                                  popup.classList.remove('flex');
-                                                  document.body.style.overflow = '';
-                                                }
-
-                                                // Add click handlers to skill badges
-                                                document.querySelectorAll('.skill-badge').forEach(badge => {
-                                                  badge.style.cursor = 'pointer';
-                                                  badge.addEventListener('click', () => {
-                                                    const skillName = badge.querySelector('p').textContent;
-                                                    showSkillDetails(skillName);
-                                                  });
-                                                });
-
-                                                // Close popup when clicking backdrop
-                                                document.querySelector('.skills-popup-backdrop')?.addEventListener('click', closeSkillsPopup);
-
-                                                // Close popup with Escape key
-                                                document.addEventListener('keydown', (e) => {
-                                                  if (e.key === 'Escape') {
-                                                    closeSkillsPopup();
-                                                  }
-                                                });
-                                                </script>
+      <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50">
+       <div class="text-4xl mb-3">
+        🌐
+       </div>
+       <p class="font-semibold text-gray-800">WordPress & Dive</p>
+      </div>
+     </div>
+    </div>
 
 
 
@@ -704,68 +462,11 @@
        <div class="text-4xl mb-4">
         🌐
        </div>
-       <h3 class="text-xl font-bold mb-2">Learn360</h3><a href="https://learn360.free.nf" target="_blank" rel="noopener noreferrer" class="text-blue-200 hover:text-white transition-colors">learn360.free.nf</a>
+       <h3 class="text-xl font-bold mb-2">Learn360</h3><a href="https://learn360.mw" target="_blank" rel="noopener noreferrer" class="text-blue-200 hover:text-white transition-colors">www.learn360.mw</a>
       </div>
      </div>
-     <div class="flex gap-6 justify-center w-full">
-       <form id="suggestion-form" class="w-full max-w-2xl flex gap-3 items-start" onsubmit="return false;">
-         <textarea id="suggestion-input" rows="3" placeholder="Share a suggestion or feedback..." class="w-full p-3 rounded-lg bg-white/10 text-white placeholder:text-white/70 focus:outline-none" ></textarea>
-         <div class="flex flex-col gap-2">
-           <button id="send-suggestion" type="button" class="px-4 py-2 bg-white text-blue-900 rounded-lg font-semibold hover:opacity-95">Send</button>
-           <button id="clear-suggestion" type="button" class="px-4 py-2 bg-transparent border border-white/20 text-white rounded-lg hover:bg-white/5">Clear</button>
-         </div>
-       </form>
+     <div class="flex gap-6 justify-center"><a href="#" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-2xl transition-all"> 📘 </a> <a href="#" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-2xl transition-all"> 🐦 </a> <a href="#" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-2xl transition-all"> 💼 </a>
      </div>
-     <script>
-     (function(){
-       const sendBtn = document.getElementById('send-suggestion');
-       const clearBtn = document.getElementById('clear-suggestion');
-       const input = document.getElementById('suggestion-input');
-
-       function openMailClient(subject, body) {
-         const href = 'mailto:lawreay1@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-         // open mail client
-         window.location.href = href;
-       }
-
-       sendBtn?.addEventListener('click', () => {
-         const text = input.value.trim();
-         if (!text) {
-           input.focus();
-           input.classList.add('ring', 'ring-red-400');
-           setTimeout(()=> input.classList.remove('ring','ring-red-400'), 1600);
-           return;
-         }
-
-         const subject = 'Suggestion from portfolio site';
-         const body = `Suggestion:\n\n${text}\n\n---\nSent from Lawrence's portfolio`;
-         // feedback
-         sendBtn.disabled = true;
-         sendBtn.textContent = 'Opening mail...';
-         openMailClient(subject, body);
-
-         // restore state after a short delay
-         setTimeout(() => {
-           sendBtn.disabled = false;
-           sendBtn.textContent = 'Send';
-           input.value = '';
-         }, 2500);
-       });
-
-       clearBtn?.addEventListener('click', () => {
-         input.value = '';
-         input.focus();
-       });
-
-       // allow Ctrl/Cmd+Enter to send
-       input?.addEventListener('keydown', (e) => {
-         if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
-           e.preventDefault();
-           sendBtn.click();
-         }
-       });
-     })();
-     </script>
     </div>
    </section><!-- Footer -->
    <footer class="bg-gray-900 text-gray-400 py-8 px-6 text-center">
@@ -1002,339 +703,23 @@
  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99ad82e9669d73b0',t:'MTc2MjUyNTY0Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-  const hamburger = document.getElementById('hamburger-menu');
-  const navMenu = document.getElementById('nav-menu');
-  const header = document.querySelector('.navbar');
-  const themeBtn = document.getElementById('theme-toggle');
-  const backBtn = document.getElementById('back-to-top');
-
-    // Hamburger menu toggle
-    if (hamburger && navMenu) {
-      hamburger.addEventListener('click', function(e) {
-        e.stopPropagation();
-        const opened = navMenu.classList.toggle('active');
-        hamburger.classList.toggle('active');
-        // Ensure header stays visible while the mobile menu is open
-        if (opened && header) {
-          header.classList.remove('collapsed');
-        }
-      });
-    }
-
-    // Collapse mobile menu and auto-collapse header when a nav link is clicked
-    if (navMenu) {
-      const navLinks = navMenu.querySelectorAll('a');
-      navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-          // close mobile menu if open
-          if (navMenu.classList.contains('active')) {
-            navMenu.classList.remove('active');
-          }
-          if (hamburger && hamburger.classList.contains('active')) {
-            hamburger.classList.remove('active');
-          }
-          // On small screens, auto-collapse the header shortly after click so the user can view content
-          if (window.innerWidth <= 1024 && header) {
-            setTimeout(() => header.classList.add('collapsed'), 350);
-          }
-        });
-      });
-    }
-
-    // Theme toggle: remember preference in localStorage
-    function applyTheme(theme) {
-      if (theme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        if (themeBtn) {
-          themeBtn.classList.add('active');
-          themeBtn.textContent = '☀️';
-          themeBtn.setAttribute('aria-pressed', 'true');
-        }
-      } else {
-        document.documentElement.removeAttribute('data-theme');
-        if (themeBtn) {
-          themeBtn.classList.remove('active');
-          themeBtn.textContent = '🌙';
-          themeBtn.setAttribute('aria-pressed', 'false');
-        }
-      }
-      try { localStorage.setItem('theme', theme); } catch (e) {}
-    }
-
-    // initialize theme from localStorage or system preference
-    (function initTheme(){
-      let saved = null;
-      try { saved = localStorage.getItem('theme'); } catch (e) { saved = null; }
-      if (!saved) {
-        saved = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
-      }
-      applyTheme(saved);
-    })();
-
-    if (themeBtn) {
-      themeBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-        applyTheme(current === 'dark' ? 'light' : 'dark');
-      });
-    }
-
-    // Back to top button behaviour
-    if (backBtn) {
-      backBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    }
+    const hamburger = document.getElementById('hamburger-menu');
+    const navMenu = document.getElementById('nav-menu');
+    
+    hamburger.addEventListener('click', function() {
+      navMenu.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
 
     // Close menu when clicking outside
     document.addEventListener('click', function(event) {
-      if (hamburger && navMenu && !hamburger.contains(event.target) && !navMenu.contains(event.target)) {
+      if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
         navMenu.classList.remove('active');
         hamburger.classList.remove('active');
       }
     });
-    // Auto-collapse header on scroll and enhanced behavior
-    (function() {
-  let lastScroll = 0;
-  let collapseTimeout;
-
-      function scheduleNavCollapse() {
-        if (!header) return;
-        clearTimeout(collapseTimeout);
-        collapseTimeout = setTimeout(() => {
-          if (window.pageYOffset > 100) {
-            header.classList.add('collapsed');
-          }
-        }, 3000);
-      }
-
-      // scroll handling
-      window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        if (!header) return;
-        if (currentScroll <= 0) {
-          header.classList.remove('collapsed');
-          clearTimeout(collapseTimeout);
-          return;
-        }
-        if (currentScroll > lastScroll && !header.classList.contains('collapsed')) {
-          header.classList.add('collapsed');
-        } else if (currentScroll < lastScroll && header.classList.contains('collapsed')) {
-          header.classList.remove('collapsed');
-          scheduleNavCollapse();
-        }
-        lastScroll = currentScroll;
-      });
-
-      // show when mouse near top
-      document.addEventListener('mousemove', (e) => {
-        if (e.clientY <= 60 && header) {
-          header.classList.remove('collapsed');
-          scheduleNavCollapse();
-        }
-      });
-
-      // interactions
-      if (header) {
-        header.addEventListener('mouseenter', () => {
-          header.classList.remove('collapsed');
-          scheduleNavCollapse();
-        });
-
-        header.addEventListener('click', () => {
-          scheduleNavCollapse();
-        });
-
-        // initial schedule
-        scheduleNavCollapse();
-      }
-    })();
-    
   });
-</script>
-
-
-<div id="promo-popup" class="fixed inset-0 z-[2000] hidden items-center justify-center" aria-hidden="true">
-  <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" data-close></div>
-  <div class="relative w-full max-w-lg mx-4 glasss-card" role="dialog">
-    <button class="absolute right-4 top-4 text-white/80 hover:text-white" onclick="closePromo()">
-      <span class="sr-only">Close</span>
-      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-      </svg>
-    </button>
-    
-    <div class="p-6 text-center">
-      <h2 class="text-2xl font-bold mb-4 text-white">Need a Professional Website?</h2>
-      <p class="text-white/90 mb-6">
-        Get a custom-built, responsive website at an affordable price. I specialize in:
-      </p>
-      <ul class="text-left text-white/90 mb-6 space-y-2">
-        <li>✓ Modern, responsive designs</li>
-        <li>✓ E-commerce solutions</li>
-        <li>✓ Business websites</li>
-        <li>✓ Portfolio sites</li>
-      </ul>
-      
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="mailto:lawreay1@gmail.com?subject=Website%20Development%20Inquiry&body=Hi%20Lawrence%2C%0A%0AI'm%20interested%20in%20getting%20a%20website%20built.%20" 
-           class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-gradient-to-r from-purple-500 to-indigo-600 rounded-lg hover:opacity-90 transition-opacity">
-          📧 Email Me
-        </a>
-        <a href="https://wa.me/265993147700?text=Hi%20Lawrence%2C%20I'm%20interested%20in%20getting%20a%20website%20built."
-           target="_blank" rel="noopener"
-           class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white border border-white/20 rounded-lg hover:bg-white/10 transition-colors">
-          💬 WhatsApp
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script>
-  
-  setTimeout(() => {
-    const popup = document.getElementById('promo-popup');
-    if (popup) {
-      popup.classList.remove('hidden');
-      popup.classList.add('flex');
-    }
-  }, 50000); // 30 seconds
-
-  function closePromo() {
-    const popup = document.getElementById('promo-popup');
-    if (popup) {
-      popup.classList.add('hidden');
-      popup.classList.remove('flex');
-    }
-  }
-
-
-  document.querySelector('[data-close]')?.addEventListener('click', closePromo);
-
-  // Close popup with Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closePromo();
-  });
-</script>
- 
-<!-- Mini floating chatbot (client-side, rule-based) -->
-<style>
-
-  .mini-chat-button { position: fixed; right: 20px; bottom: 20px; width: 56px; height: 56px; border-radius: 999px; background: linear-gradient(135deg,#667eea,#764ba2); color: #fff; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(2,6,23,0.4); cursor:pointer; z-index:2200 }
-  .mini-chat-panel { position: fixed; right: 20px; bottom: 88px; width: 320px; max-width: calc(100% - 40px); background: linear-gradient(180deg, rgba(0, 1, 58, 0.911), rgba(74, 104, 236, 0.747)); border-radius: 12px; box-shadow: 0 20px 60px rgb(2, 6, 23); z-index:2200; color: #fff; overflow:hidden; display:none; }
-  .mini-chat-panel.open { display:block; }
-  .mini-chat-header { display:flex; align-items:center; justify-content:space-between; padding:10px 12px; border-bottom:1px solid rgb(255, 255, 255); }
-  .mini-chat-title { font-weight:700; font-size:14px; }
-  .mini-chat-body { max-height:260px; overflow:auto; padding:12px; font-size:14px; line-height:1.4; }
-  .mini-chat-message { margin:8px 0; padding:8px 10px; border-radius:8px; display:inline-block; max-width:100%; }
-  .mini-chat-message.user { background: rgb(0, 50, 100); color:#ffffff; align-self:flex-end; }
-  .mini-chat-message.bot { background: rgba(102, 126, 234, 0.932); color:#fff; }
-  .mini-chat-input { display:flex; gap:8px; padding:10px; border-top:1px solid rgb(255, 255, 255); }
-  .mini-chat-input textarea { flex:1; resize:none; padding:8px; border-radius:8px; background:transparent; color:#fff; border:1px solid rgba(255, 255, 255, 0.233); min-height:40px; }
-  .mini-chat-input button { padding:8px 10px; border-radius:8px; background:#667eea; color:#fff; border:none; cursor:pointer; }
-  .mini-chat-suggestions { display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
-  .mini-chat-suggestion { background-color: rgba(74, 104, 236, 0.747); padding:6px 8px; border-radius:999px; font-size:13px; cursor:pointer; }
-  @media (max-width:420px){ .mini-chat-panel{ right:10px; left:10px; width:auto; bottom:80px } }
-</style>
-
-<div id="mini-chat" aria-hidden="false">
-  <div id="mini-chat-panel" class="mini-chat-panel" role="dialog" aria-label="Site assistant">
-    <div class="mini-chat-header">
-      <div class="mini-chat-title">Ask about Lawrence or this site</div>
-      <div>
-        <button id="mini-chat-close" title="Close" style="background:transparent;border:none;color:rgba(255,255,255,0.8);font-size:18px;cursor:pointer">×</button>
-      </div>
-    </div>
-    <div id="mini-chat-body" class="mini-chat-body" role="log" aria-live="polite"></div>
-    <div style="padding:0 12px 12px;">
-      <div class="mini-chat-suggestions">
-        <div class="mini-chat-suggestion" data-q="who are you">Who are you?</div>
-        <div class="mini-chat-suggestion" data-q="projects">Projects</div>
-        <div class="mini-chat-suggestion" data-q="learn360">About Learn360</div>
-        <div class="mini-chat-suggestion" data-q="contact">Contact</div>
-      </div>
-      <div class="mini-chat-input">
-        <textarea id="mini-chat-input" placeholder="Type a question (eg. 'Tell me about Learn360')"></textarea>
-        <button id="mini-chat-send">Send</button>
-      </div>
-    </div>
-  </div>
-
-  <button id="mini-chat-btn" class="mini-chat-button" aria-label="Open chat">💬</button>
-</div>
-
-<script>
-  (function(){
-    const panel = document.getElementById('mini-chat-panel');
-    const btn = document.getElementById('mini-chat-btn');
-    const closeBtn = document.getElementById('mini-chat-close');
-    const sendBtn = document.getElementById('mini-chat-send');
-    const input = document.getElementById('mini-chat-input');
-    const body = document.getElementById('mini-chat-body');
-
-   
-    const kb = [
-      { keys: ['who','you','about me'], answer: "I'm Lawrence Phuka Chikapa — an ICT Educator and Creative Technologist. I build Learn360 and create websites, animations, and educational content." },
-      { keys: ['learn360','learn 360'], answer: "Learn360 is a free digital education platform I founded to provide courses and videos for learners across Malawi. Visit learn360.free.nf for the demo." },
-      { keys: ['projects','portfolio','work'], answer: "You can view featured projects on this site — Learn360, Ntonda Quiz System, and various animation projects. Check the Projects section for details." },
-      { keys: ['contact','email','whatsapp'], answer: "You can contact me at lawreay1@gmail.com or WhatsApp +265 993 147 700. There is also a contact section on this page." },
-      { keys: ['skills','competencies','core'], answer: "Core competencies include Web Application Development, Network Security, UI/UX Design, Media Production, Educational Tech, and more. Click any skill to read details." }
-    ];
-
-    function addMessage(text, who){
-      const el = document.createElement('div');
-      el.className = 'mini-chat-message ' + (who==='user'?'user':'bot');
-      el.textContent = text;
-      body.appendChild(el);
-      body.scrollTop = body.scrollHeight;
-    }
-
-    function findAnswer(q){
-      const t = q.toLowerCase();
-      for (const item of kb){
-        for (const k of item.keys){
-          if (t.includes(k)) return item.answer;
-        }
-      }
-     
-      return "I can tell you about Lawrence (background, projects, contact) or the Learn360 platform. Try: 'Who are you?', 'Projects', 'Learn360', or 'Contact'.";
-    }
-
-    function handleSend(text){
-      if (!text) return;
-      addMessage(text,'user');
-      const ans = findAnswer(text);
-      
-      setTimeout(()=> addMessage(ans,'bot'), 500);
-    }
-
-   
-    btn.addEventListener('click', ()=> panel.classList.toggle('open'));
-    closeBtn.addEventListener('click', ()=> panel.classList.remove('open'));
-
-    sendBtn.addEventListener('click', ()=>{
-      const v = input.value.trim();
-      if (!v) return input.focus();
-      handleSend(v);
-      input.value = '';
-    });
-
-    input.addEventListener('keydown', (e)=>{
-      if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendBtn.click(); }
-    });
-
-    document.querySelectorAll('.mini-chat-suggestion').forEach(el=> el.addEventListener('click', ()=>{
-      const q = el.getAttribute('data-q');
-      handleSend(q);
-    }));
-
-    
-    setTimeout(()=>{
-      addMessage("Hi — I'm a quick site assistant. Ask me about Lawrence, projects, skills or contact details.", 'bot');
-    }, 1200);
-  })();
 </script>
 </body>
+
 </html>
