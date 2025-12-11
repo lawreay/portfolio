@@ -13,7 +13,8 @@
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
   <style>
     
-     .glasss-card {
+      /* Layout & glass styles */
+      .glasss-card {
       background:  linear-gradient(180deg, #667eea 0%, #764ba2 100%);
       border-radius: 16px;
       padding: 30px;
@@ -56,9 +57,45 @@
       color: #e0f7fa;
     }
 
-    .emoji {
-      margin-right: 8px;
+    /* Icon / image sizing and positioning */
+    .my_PP{
+      width: 160px;
+      height: auto;
+      max-width: 100%;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto;
+      object-fit: cover;
     }
+
+    .core {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 8px;
+      transition: transform 0.35s ease;
+    }
+
+    .project-image{
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Reveal / scroll animations */
+    .reveal-on-scroll { opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(.2,.9,.2,1), transform 0.7s cubic-bezier(.2,.9,.2,1); will-change: opacity, transform; }
+    .reveal-on-scroll.show { opacity: 1; transform: none; }
+    .reveal-stagger > .reveal-on-scroll { transition-delay: 0ms; }
+
+    /* Gentle floating animation for icons */
+    .icon-anim { animation: float 4s ease-in-out infinite; }
+    @keyframes float { 0% { transform: translateY(0); } 50% { transform: translateY(-6px); } 100% { transform: translateY(0); } }
+
+    /* Small helpers */
+    .animate-pop { transform-origin: center; transition: transform 0.25s ease; }
+    .animate-pop:hover { transform: scale(1.04); }
 
   promo-popup
     #promo-popup {
@@ -97,27 +134,28 @@
       .details li {
         font-size: 15px;
       }
-    }
-    
-   
-    .my_PP{
-      width: 180px;
-      height: auto;
-      max-width: 100%;
-      border-radius: 50%;
-      display: block;
-      margin: 0 auto;
-      object-fit: cover;
+
+      .project-image { height: 140px; }
+      .core { width: 40px; height: 40px; }
+      .my_PP { width: 140px; }
     }
 
+    </style>
+    <style>
+    /* Navbar shrink styles */
+    .navbar { transition: padding 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease; }
+    .navbar.scrolled { padding-top:8px; padding-bottom:8px; background-color: rgba(2,6,23,0.45); box-shadow: 0 6px 20px rgba(2,6,23,0.25); backdrop-filter: blur(6px); }
+    .hero-parallax { transition: transform 0.2s linear; will-change: transform; }
+    html { scroll-behavior: smooth; }
     </style>
 
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="images.css">
  </head>
- <body class="font-sans">
+<body class="font-sans">
+  <div id="scroll-progress" aria-hidden="true" style="position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,#7c3aed,#06b6d4);z-index:4000;transition:width .12s linear"></div>
   <div id="portfolio-container"><!-- Hero Section -->
-   <section class="hero-gradient text-white min-h-screen flex items-center justify-center px-6 py-20">
+  <section class="hero-gradient text-white min-h-screen flex items-center justify-center px-6 py-20 reveal-on-scroll hero-parallax">
     <div class="max-w-4xl text-center">
         <div class="mb-8">
 
@@ -179,7 +217,7 @@
 
 
 
-            <img class="my_PP" src="MYphoto.png" alt="">
+            <img class="my_PP reveal-on-scroll icon-anim" src="MYphoto.png" alt="">
 
 
 
@@ -194,7 +232,7 @@
 
 
    </section><!-- About Section -->
-   <section id="about" class="section-gradient py-20 px-6">
+  <section id="about" class="section-gradient py-20 px-6 reveal-on-scroll">
     <div class="max-w-6xl mx-auto">
      <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 gradient-text">About Me</h2>
      <div class="glass-card rounded-3xl p-8 md:p-12">
@@ -212,14 +250,14 @@
     <div class="max-w-6xl mx-auto">
      <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 gradient-text">PERSONAL DETAILS</h2>
      <div class="glasss-card rounded-3xl p-8 md:p-12">
-     <div class="glass-card">
+      <div class="glass-card reveal-on-scroll">
     <h2>👤 Lawrence Phuka Chikapa</h2>
     <ul class="details">
-      <li><span class="emoji">🏡</span><strong>Home of Origin:</strong> Ntcheu</li>
-      <li><span class="emoji">🌍</span><strong>Nationality:</strong> Malawian</li>
-      <li><span class="emoji">🙏</span><strong>Religion:</strong> Christian</li>
-      <li><span class="emoji">💍</span><strong>Marital Status:</strong> Single</li>
-      <li><span class="emoji">📬</span><strong>Address:</strong> Care of Chipula Primary School, P.O. Box 313, Ntcheu</li>
+      <li><strong>Home of Origin:</strong> Ntcheu</li>
+      <li><strong>Nationality:</strong> Malawian</li>
+      <li><strong>Religion:</strong> Christian</li>
+      <li><strong>Marital Status:</strong> Single</li>
+      <li><strong>Address:</strong> Care of Chipula Primary School, P.O. Box 313, Ntcheu</li>
     </ul>
   </div>
      </div>
@@ -306,12 +344,12 @@
      
      
      
-     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Project 1 -->
-      <a href="https://learn360.free.nf" target="_blank">
-      <div class="glass-card rounded-2xl overflow-hidden">
-       <div class="project-card-image">
-        <img src="learn360.png" alt="Learn360 Platform" class="project-image">
-       </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Project 1 -->
+        <a href="https://learn360.free.nf" target="_blank">
+        <div class="glass-card rounded-2xl overflow-hidden reveal-on-scroll animate-pop">
+    <div class="project-card-image">
+     <img src="learn360.png" alt="Learn360 Platform" class="project-image reveal-on-scroll">
+    </div>
        <div class="p-6">
         <h3 id="proj1-title" class="text-xl font-bold text-gray-800 mb-3">Learn360 Platform</h3>
         <p id="proj1-desc" class="text-gray-700 mb-4">Comprehensive digital education platform offering free courses, video lessons, and interactive content for Malawian students and lifelong learners.</p>
@@ -327,9 +365,9 @@
 
 
       </div></a><!-- Project 2 -->
-      <a href="https://lawreay.github.io/Ntonda-Online-Quiz-System-/"><div class="glass-card rounded-2xl overflow-hidden">
+      <a href="https://lawreay.github.io/Ntonda-Online-Quiz-System-/"><div class="glass-card rounded-2xl overflow-hidden reveal-on-scroll animate-pop">
        <div class="project-card-image">
-        <img src="1.jpg" alt="Ntonda Quiz System" class="project-image">
+        <img src="1.jpg" alt="Ntonda Quiz System" class="project-image reveal-on-scroll">
        </div>
        <div class="p-6">
         <h3 id="proj2-title" class="text-xl font-bold text-gray-800 mb-3">Ntonda Online Quiz System</h3>
@@ -352,9 +390,9 @@
       
       <a href="https://lawreay.github.io/learn360-log-in-page-demo/">
       <!-- Project 3 -->
-      <div class="glass-card rounded-2xl overflow-hidden">
+      <div class="glass-card rounded-2xl overflow-hidden reveal-on-scroll animate-pop">
        <div class="project-card-image">
-        <img src="2019-polar-lights-background.jpg" alt="Educational Animation" class="project-image">
+        <img src="2019-polar-lights-background.jpg" alt="Educational Animation" class="project-image reveal-on-scroll">
        </div>
        <div class="p-6">
         <h3 id="proj3-title" class="text-xl font-bold text-gray-800 mb-3">Educational Animation Content</h3>
@@ -389,19 +427,18 @@
 
 
 
-                                                  <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer">
+                                                  <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer reveal-on-scroll animate-pop">
                                                   <div class="text-4xl mb-3">
-                                                    💻
-                                                  </div>
+                                                    <img class="core icon-anim reveal-on-scroll" src="baseline_computer_black_48.png" alt="">                                                 </div>
                                                   <p class="font-semibold text-gray-800">HTML, CSS & JavaSript</p>
                                                   </div>
 
 
 
 
-                                                  <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50">
+                                                  <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50 reveal-on-scroll animate-pop">
                                                   <div class="text-4xl mb-3">
-                                                    🔒
+                                                    <img class="core icon-anim reveal-on-scroll" src="baseline_security_black_48.png" alt="">
                                                   </div>
                                                   <p class="font-semibold text-gray-800">Network Security</p>
                                                   </div>
@@ -409,71 +446,43 @@
 
 
 
-                                                  <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50">
+                                                  <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50 reveal-on-scroll animate-pop">
                                                   <div class="text-4xl mb-3">
-                                                    🎨
+                                                    <img class="core icon-anim reveal-on-scroll" src="twotone_palette_black_36.png" alt="">
                                                   </div>
                                                   <p class="font-semibold text-gray-800">UI/UX Design</p>
                                                   </div>
 
 
 
-                                                  <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50">
+                                                  <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50 reveal-on-scroll animate-pop">
                                                   <div class="text-4xl mb-3">
-                                                    📹
+                                                    <img class="core icon-anim reveal-on-scroll" src="baseline_photo_camera_front_black_36.png" alt="">
                                                   </div>
                                                   <p class="font-semibold text-gray-800">Media Production</p>
                                                   </div>
 
 
 
-                                                  <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50">
+                                                  <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50 reveal-on-scroll animate-pop">
                                                   <div class="text-4xl mb-3">
-                                                    🎓
+                                                    <img class="core icon-anim reveal-on-scroll" src="baseline_cast_for_education_black_48.png" alt="">
                                                   </div>
                                                   <p class="font-semibold text-gray-800">Educational Tech</p>
                                                   </div>
 
 
 
-                                                  <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50">
+                                                  <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50 reveal-on-scroll animate-pop">
                                                   <div class="text-4xl mb-3">
-                                                    ⚙️
+                                                    <img class="core icon-anim reveal-on-scroll" src="baseline_contact_support_black_48.png" alt="">
                                                   </div>
                                                   <p class="font-semibold text-gray-800">Technical Support</p>
                                                   </div>
 
 
 
-                                                  <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50">
-                                                  <div class="text-4xl mb-3">
-                                                    📱
-                                                  </div>
-                                                  <p class="font-semibold text-gray-800">Web Application Development</p>
-                                                  </div>
-
-
-
-
-                                                  <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50">
-                                                  <div class="text-4xl mb-3">
-                                                    🎬
-                                                  </div>
-                                                  <p class="font-semibold text-gray-800">Animation</p>
-                                                  </div>
-
-
-
-
-                                                  <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50">
-                                                  <div class="text-4xl mb-3">
-                                                    🌐
-                                                  </div>
-                                                  <p class="font-semibold text-gray-800">WordPress & Dive</p>
-                                                  </div>
-                                                </div>
-                                                </div>
-
+                                                 
                                                 <!-- Skills Info Popup -->
                                                 <div id="skills-popup" class="fixed inset-0 z-[2001] hidden items-center justify-center">
                                                   <div class="skills-popup-backdrop absolute inset-0 bg-slate-900/80 backdrop-blur-md"></div>
@@ -650,31 +659,7 @@
      <div class="glass-card rounded-3xl p-8 md:p-12 mb-8">
       <h3 id="vision-title" class="text-3xl font-bold text-gray-800 mb-6">Transforming Education in Malawi</h3>
       <p id="vision-text" class="text-lg text-gray-700 leading-relaxed mb-8">My vision is to scale Learn360 into a national hub for free digital learning, reaching every corner of Malawi. By leveraging technology, partnerships, and community engagement, I aim to democratize access to quality education and empower the next generation of Malawian innovators.</p>
-      <div class="grid md:grid-cols-3 gap-6">
-       <div class="bg-white/50 rounded-xl p-6">
-        <div class="text-4xl mb-4">
-         📱
-        </div>
-        <h4 class="text-xl font-bold text-gray-800 mb-3">Mobile Apps</h4>
-        <p class="text-gray-700">Develop iOS and Android apps for offline learning access in areas with limited connectivity.</p>
-       </div>
-       <div class="bg-white/50 rounded-xl p-6">
-        <div class="text-4xl mb-4">
-         🤖
-        </div>
-        <h4 class="text-xl font-bold text-gray-800 mb-3">AI-Powered Tools</h4>
-        <p class="text-gray-700">Integrate intelligent tutoring systems and personalized learning paths for each student.</p>
-       </div>
-       <div class="bg-white/50 rounded-xl p-6">
-        <div class="text-4xl mb-4">
-         🌍
-        </div>
-        <h4 class="text-xl font-bold text-gray-800 mb-3">National Reach</h4>
-        <p class="text-gray-700">Partner with schools, libraries, and community centers across all regions of Malawi.</p>
-       </div>
-      </div>
-     </div>
-    </div>
+      
    </section><!-- Contact Section -->
    <section id="contact" class="py-20 px-6 bg-gradient-to-br from-blue-900 to-purple-900 text-white">
     <div class="max-w-4xl mx-auto text-center">
@@ -683,19 +668,19 @@
      <div class="grid md:grid-cols-2 gap-8 mb-12">
       <div class="glass-card rounded-2xl p-6">
        <div class="text-4xl mb-4">
-        📧
+        <img src="baseline_mark_email_unread_black_18pt_3x.png" alt="">
        </div>
        <h3 class="text-xl font-bold mb-2">Email</h3><a href="mailto:lawreay1@gmail.com" class="text-blue-200 hover:text-white transition-colors">lawreay1@gmail.com</a>
       </div>
       <div class="glass-card rounded-2xl p-6">
        <div class="text-4xl mb-4">
-        💬
+       <img src="baseline_speaker_phone_black_18pt_3x.png" alt="">
        </div>
-       <h3 class="text-xl font-bold mb-2">WhatsApp</h3><a href="https://wa.me/265993147700" target="_blank" rel="noopener noreferrer" class="text-blue-200 hover:text-white transition-colors">+265 993 147 700</a>
+       <h3 class="text-xl font-bold mb-2">WhatsApp</h3><a href="https://wa.me/265885172857" target="_blank" rel="noopener noreferrer" class="text-blue-200 hover:text-white transition-colors">+265 993 147 700</a>
       </div>
       <div class="glass-card rounded-2xl p-6">
        <div class="text-4xl mb-4">
-        📍
+        <img src="sharp_map_black_48.png" alt="">
        </div>
        <h3 class="text-xl font-bold mb-2">Location</h3>
        <p class="text-blue-200">Ntcheu, Malawi</p>
@@ -1155,40 +1140,29 @@
 </script>
 
 
-<div id="promo-popup" class="fixed inset-0 z-[2000] hidden items-center justify-center" aria-hidden="true">
-  <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" data-close></div>
-  <div class="relative w-full max-w-lg mx-4 glasss-card" role="dialog">
-    <button class="absolute right-4 top-4 text-white/80 hover:text-white" onclick="closePromo()">
+<!-- Promo converted from fullscreen modal to a bottom non-fullscreen bar -->
+<div id="promo-popup" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-[2000] w-full max-w-3xl mx-4" role="region" aria-label="Promo">
+  <div class="relative w-full glasss-card px-4 py-3 flex items-center gap-4">
+    <div class="flex-1 text-left">
+      <h2 class="text-lg font-bold text-white">Need a Professional Website?</h2>
+      <p class="text-white/90 text-sm">Get a custom-built, responsive website at an affordable price. I specialize in modern, responsive designs and e-commerce.</p>
+    </div>
+    <div class="flex gap-3">
+      <a href="mailto:lawreay1@gmail.com?subject=Website%20Development%20Inquiry&body=Hi%20Lawrence%2C%0A%0AI'm%20interested%20in%20getting%20a%20website%20built.%20" 
+         class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-purple-500 to-indigo-600 rounded-lg hover:opacity-90 transition-opacity">
+        Email
+      </a>
+      <a href="https://wa.me/265993147700?text=Hi%20Lawrence%2C%20I'm%20interested%20in%20getting%20a%20website%20built." target="_blank" rel="noopener"
+         class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white border border-white/20 rounded-lg hover:bg-white/10 transition-colors">
+        WhatsApp
+      </a>
+    </div>
+    <button class="ml-3 text-white/80 hover:text-white" aria-label="Close promo" onclick="document.getElementById('promo-popup').style.display='none'">
       <span class="sr-only">Close</span>
-      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </button>
-    
-    <div class="p-6 text-center">
-      <h2 class="text-2xl font-bold mb-4 text-white">Need a Professional Website?</h2>
-      <p class="text-white/90 mb-6">
-        Get a custom-built, responsive website at an affordable price. I specialize in:
-      </p>
-      <ul class="text-left text-white/90 mb-6 space-y-2">
-        <li>✓ Modern, responsive designs</li>
-        <li>✓ E-commerce solutions</li>
-        <li>✓ Business websites</li>
-        <li>✓ Portfolio sites</li>
-      </ul>
-      
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="mailto:lawreay1@gmail.com?subject=Website%20Development%20Inquiry&body=Hi%20Lawrence%2C%0A%0AI'm%20interested%20in%20getting%20a%20website%20built.%20" 
-           class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-gradient-to-r from-purple-500 to-indigo-600 rounded-lg hover:opacity-90 transition-opacity">
-          📧 Email Me
-        </a>
-        <a href="https://wa.me/265993147700?text=Hi%20Lawrence%2C%20I'm%20interested%20in%20getting%20a%20website%20built."
-           target="_blank" rel="noopener"
-           class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white border border-white/20 rounded-lg hover:bg-white/10 transition-colors">
-          💬 WhatsApp
-        </a>
-      </div>
-    </div>
   </div>
 </div>
 
@@ -1222,7 +1196,7 @@
 <!-- Mini floating chatbot (client-side, rule-based) -->
 <style>
 
-  .mini-chat-button { position: fixed; right: 20px; bottom: 20px; width: 56px; height: 56px; border-radius: 999px; background: linear-gradient(135deg,#667eea,#764ba2); color: #fff; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(2,6,23,0.4); cursor:pointer; z-index:2200 }
+  .mini-chat-button { position: fixed; right: 20px; bottom: 20px; width: 56px; height: 56px; border-radius: 999px; background: linear-gradient(135deg,#c7ceeb,#d3a6ff); color: #fff; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(2,6,23,0.4); cursor:pointer; z-index:2200 }
   .mini-chat-panel { position: fixed; right: 20px; bottom: 88px; width: 320px; max-width: calc(100% - 40px); background: linear-gradient(180deg, rgba(0, 1, 58, 0.911), rgba(74, 104, 236, 0.747)); border-radius: 12px; box-shadow: 0 20px 60px rgb(2, 6, 23); z-index:2200; color: #fff; overflow:hidden; display:none; }
   .mini-chat-panel.open { display:block; }
   .mini-chat-header { display:flex; align-items:center; justify-content:space-between; padding:10px 12px; border-bottom:1px solid rgb(255, 255, 255); }
@@ -1262,7 +1236,7 @@
     </div>
   </div>
 
-  <button id="mini-chat-btn" class="mini-chat-button" aria-label="Open chat">💬</button>
+  <button id="mini-chat-btn" class="mini-chat-button" aria-label="Open chat"><img src="icons8-bot-100.png" alt=""></button>
 </div>
 
 <script>
@@ -1336,5 +1310,74 @@
     }, 1200);
   })();
 </script>
+
+<!-- Scroll reveal script: adds 'show' to elements with class 'reveal-on-scroll' when visible -->
+<script>
+  (function(){
+    const revealEls = document.querySelectorAll('.reveal-on-scroll');
+    const progress = document.getElementById('scroll-progress');
+    const navbar = document.querySelector('.navbar');
+    const hero = document.querySelector('.hero-gradient');
+    const heroInner = hero?.querySelector('.max-w-4xl');
+
+    // Support staggered reveals: containers with .reveal-stagger will stagger their child .reveal-on-scroll
+    document.querySelectorAll('.reveal-stagger').forEach(container => {
+      const children = container.querySelectorAll('.reveal-on-scroll');
+      children.forEach((ch, i) => {
+        if (!ch.style.transitionDelay) ch.style.transitionDelay = (i * 90) + 'ms';
+      });
+    });
+
+    if (revealEls.length) {
+      const io = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealEls.forEach(el => io.observe(el));
+    }
+
+    // scroll-effects: progress bar, navbar shrink, hero parallax
+    let ticking = false;
+    function onScroll() {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      if (progress) progress.style.width = pct + '%';
+
+      if (navbar) {
+        if (scrollTop > 40) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');
+      }
+
+      if (heroInner) {
+        const translate = Math.min(scrollTop * 0.08, 30); // limit transform
+        heroInner.style.transform = `translateY(${translate}px)`;
+      }
+
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(onScroll);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // initial run
+    onScroll();
+
+    // small interaction polish for icon elements
+    document.querySelectorAll('.core.icon-anim').forEach(icon => {
+      icon.addEventListener('mouseenter', () => icon.style.transform = 'translateY(-6px) scale(1.02)');
+      icon.addEventListener('mouseleave', () => icon.style.transform = '');
+    });
+  })();
+</script>
 </body>
 </html>
+
