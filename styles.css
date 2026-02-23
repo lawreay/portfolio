@@ -4,40 +4,53 @@
       margin: 0;
       padding: 0;
       height: 100%;
-      overflow-x:scroll;
+      overflow-x: hidden;
+      font-family: 'Segoe UI', 'Roboto', -apple-system, sans-serif;
+      line-height: 1.7;
+      background: #ffffff;
+      color: #1f2937;
+      letter-spacing: 0.3px;
     }
     
     html {
       height: 100%;
+      scroll-behavior: smooth;
     }
 
+    /* Professional Glass Card Styling */
     .glass-card {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      transition: all 0.3s ease;
+      border: 1px solid rgba(99, 102, 241, 0.15);
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
 
     .glass-card:hover {
-      background: rgba(255, 255, 255, 0.15);
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      background: rgba(255, 255, 255, 0.99);
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(99, 102, 241, 0.18);
+      border-color: rgba(99, 102, 241, 0.3);
     }
 
+    /* Gradient Text for Headers */
     .gradient-text {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, #6366f1 0%, #0ea5e9 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      font-weight: 700;
     }
 
+    /* Timeline Styling */
     .timeline-line {
       position: absolute;
       left: 50%;
       top: 0;
       bottom: 0;
-      width: 2px;
-      background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+      width: 3px;
+      background: linear-gradient(180deg, #6366f1 0%, #0ea5e9 100%);
     }
 
     @media (max-width: 768px) {
@@ -51,20 +64,135 @@
     }
 
     .skill-badge:hover {
-      transform: scale(1.1);
+      transform: translateY(-8px);
+      box-shadow: 0 16px 32px rgba(99, 102, 241, 0.25);
+      border-color: rgba(99, 102, 241, 0.4);
     }
 
     .hero-gradient {
-      background-image:url(backg.jpg);
-      background-repeat:initial;
+      background: linear-gradient(135deg, #1e293b 0%, #1e40af 50%, #0e7490 100%);
       padding-bottom: 0px;
       margin-bottom: 0px;
     }
 
     .section-gradient {
-      background: linear-gradient(180deg, #f8fafc 0%, #e0e7ff 100%);
+      background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
     }
-  .pp{
-    
-    width: 200px;
-  }
+  
+    .pp {
+      width: 200px;
+    }
+
+    /* Enhanced spacing and sections */
+    section {
+      scroll-margin-top: 100px;
+    }
+
+    h1 {
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    h2 {
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 3rem;
+    }
+
+    h3 {
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+
+    p {
+      font-weight: 500;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* Enhanced Mobile Responsiveness */
+    @media (max-width: 640px) {
+      body {
+        font-size: 14px;
+      }
+
+      h1 {
+        font-size: 2rem !important;
+      }
+
+      h2 {
+        font-size: 1.5rem !important;
+      }
+
+      h3 {
+        font-size: 1.25rem !important;
+      }
+
+      .glass-card {
+        border-radius: 12px;
+        padding: 1rem;
+      }
+
+      .px-8 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .max-w-6xl {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .grid {
+        gap: 1rem;
+      }
+    }
+
+    /* Image Loading Animations */
+    @keyframes shimmer {
+      0% {
+        background-position: -1000px 0;
+      }
+      100% {
+        background-position: 1000px 0;
+      }
+    }
+
+    @keyframes fadeInImage {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .image-loading {
+      background: linear-gradient(90deg, #e5e7eb 25%, #d1d5db 50%, #e5e7eb 75%);
+      background-size: 1000px 100%;
+      animation: shimmer 2s infinite;
+    }
+
+    img {
+      animation: fadeInImage 0.6s ease-in-out;
+    }
+
+    img[loading="lazy"] {
+      animation: fadeInImage 0.6s ease-in-out;
+    }
+
+    .project-image {
+      animation: fadeInImage 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .profile-image {
+      animation: fadeInImage 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .nav-logo {
+      animation: fadeInImage 0.5s ease-in-out;
+    }

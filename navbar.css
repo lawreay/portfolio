@@ -4,31 +4,36 @@
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(15, 23, 42, 0.95);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  background: rgba(30, 41, 59, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  transition: transform 0.3s ease-in-out;
-
+  border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
 }
 
 /* Theme variables (light by default) */
 :root {
   --bg: #ffffff;
   --text: #0b1220;
-  --nav-bg: rgba(15, 23, 42, 0.95);
-  --surface: rgba(255,255,255,0.9);
-  --muted: rgba(255,255,255,0.6);
+  --nav-bg: rgba(30, 41, 59, 0.95);
+  --surface: rgba(255,255,255,0.95);
+  --muted: rgba(255,255,255,0.7);
+  --primary: #6366f1;
+  --secondary: #0ea5e9;
+  --accent: #f59e0b;
 }
 
 /* Dark theme overrides */
 [data-theme="dark"] {
-  --bg: #071025;
+  --bg: #0f172a;
   --text: #e6eef8;
-  --nav-bg: rgba(2, 6, 23, 0.9);
-  --surface: rgba(255,255,255,0.06);
+  --nav-bg: rgba(15, 23, 42, 0.95);
+  --surface: rgba(255,255,255,0.08);
   --muted: rgba(255,255,255,0.85);
+  --primary: #818cf8;
+  --secondary: #06b6d4;
+  --accent: #fbbf24;
 }
 
 .navbar nav {
@@ -41,6 +46,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 }
 
 .logo-container {
@@ -61,37 +67,55 @@
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(99, 102, 241, 0.3);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.15);
+}
+
+.nav-logo:hover {
+  transform: scale(1.08) rotate(5deg);
+  border-color: rgba(99, 102, 241, 0.6);
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
 }
 
 .logo-text {
   font-size: 1.25rem;
-  font-weight: 600;
-  letter-spacing: 1px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
   color: white;
 }
 
 /* Nav actions (theme toggle + back-to-top) */
 .nav-actions {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.75rem;
   align-items: center;
 }
 
 .theme-toggle {
   background: transparent;
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 1.5px solid rgba(99, 102, 241, 0.3);
   color: var(--muted);
-  padding: 6px 8px;
+  padding: 8px 13px;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.theme-toggle:hover {
+  border-color: rgba(99, 102, 241, 0.6);
+  background: rgba(99, 102, 241, 0.15);
+  color: #ffffff;
+  transform: translateY(-2px);
 }
 
 .theme-toggle.active {
-  background: rgba(255,255,255,0.92);
-  color: #071025;
-  border-color: rgba(0,0,0,0.06);
+  background: rgba(99, 102, 241, 0.25);
+  color: #ffffff;
+  border-color: rgba(99, 102, 241, 0.6);
 }
 
 .back-to-top {
@@ -100,25 +124,37 @@
   justify-content: center;
   width: 36px;
   height: 36px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.06);
-  border: none;
-  color: var(--muted);
+  border-radius: 8px;
+  background: rgba(99, 102, 241, 0.15);
+  border: 1.5px solid rgba(99, 102, 241, 0.3);
+  color: rgba(255, 255, 255, 0.85);
   cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .back-to-top:hover {
-  transform: translateY(-2px);
+  background: rgba(99, 102, 241, 0.3);
+  transform: translateY(-4px);
+  color: #ffffff;
+  border-color: rgba(99, 102, 241, 0.6);
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.25);
 }
 
 .navbar nav ul {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 2rem;
+  gap: 0.6rem;
   list-style: none;
   margin: 0;
-  padding: 0.5rem 0;
+  padding: 0.6rem 1rem;
+  flex-wrap: wrap;
+  background: rgba(99, 102, 241, 0.1);
+  border-radius: 999px;
+  border: 1.5px solid rgba(99, 102, 241, 0.2);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.12);
 }
 
 .hamburger {
@@ -130,6 +166,7 @@
   position: absolute;
   right: 15px;
   top: 15px;
+  z-index: 1002;
 }
 
 .hamburger span {
@@ -138,7 +175,8 @@
   height: 3px;
   background-color: #fff;
   margin: 5px 0;
-  transition: 0.3s;
+  transition: 0.3s ease;
+  border-radius: 2px;
 }
 
 .hamburger.active span:nth-child(1) {
@@ -156,7 +194,6 @@
 @media screen and (max-width: 1024px) {
   .hamburger {
     display: block;
-    z-index: 1001;
   }
 
   .nav-container {
@@ -167,13 +204,26 @@
     gap: 0.5rem;
   }
 
+  .logo-text {
+    font-size: 1.1rem;
+  }
+
   .nav-logo {
     width: 32px;
     height: 32px;
   }
 
-  .logo-text {
-    font-size: 1.1rem;
+  .navbar nav {
+    padding: 0.5rem 1rem;
+  }
+
+  .nav-actions {
+    gap: 0.5rem;
+  }
+
+  .back-to-top {
+    width: 32px;
+    height: 32px;
   }
 
   .navbar nav ul {
@@ -185,11 +235,13 @@
     width: 100%;
     height: 100vh;
     background: rgba(15, 23, 42, 0.98);
-    padding: 4rem 0;
+    padding: 4rem 1rem 2rem;
     gap: 0.75rem;
     text-align: center;
     z-index: 1000;
     overflow-y: auto;
+    border-radius: 0;
+    border: none;
   }
 
   .navbar nav ul.active {
@@ -209,12 +261,14 @@
 
   .navbar nav ul li .header_btn {
     width: 100%;
-    padding: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
   }
 
   .navbar nav ul li .download {
-    width: 100%;
-    margin: 0.5rem 0;
+    width: 90%;
+    margin: 0.5rem auto;
   }
 
   @keyframes slideIn {
@@ -241,40 +295,105 @@
 
 .navbar nav ul li a:hover {
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(99, 102, 241, 0.2);
 }
 
 .download {
-  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  background: linear-gradient(135deg, #6366f1 0%, #0ea5e9 100%);
   color: white;
   border: none;
-  border-radius: 8px;
-  padding: 0.75rem 1.5rem;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 999px;
+  padding: 0.7rem 1.6rem;
+  font-weight: 800;
+  font-size: 0.9rem;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.45);
   text-decoration: none;
   display: inline-block;
+  cursor: pointer;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
 }
 
 .download:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.55);
+  background: linear-gradient(135deg, #7c7ffd 0%, #22d3ee 100%);
+}
+
+.download:active {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.45);
 }
 
 .header_btn {
-  background: transparent;
-  color: rgba(255, 255, 255, 0.85);
-  font-weight: 500;
-  border: none;
-  padding: 0.5rem 0.75rem;
-  border-radius: 6px;
-  transition: all 0.3s ease;
+  background: rgba(99, 102, 241, 0.12);
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 700;
+  border: 1.5px solid rgba(99, 102, 241, 0.35);
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
 }
 
 .header_btn:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(99, 102, 241, 0.25);
   color: #ffffff;
+  border-color: rgba(99, 102, 241, 0.7);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.25);
+}
+
+.header_btn:active {
+  background: linear-gradient(135deg, #6366f1 0%, #0ea5e9 100%);
+  color: white;
+  border-color: transparent;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 480px) {
+  .navbar nav {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .logo-text {
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+  }
+
+  .nav-logo {
+    width: 28px;
+    height: 28px;
+  }
+
+  .logo-container {
+    gap: 0.5rem;
+  }
+
+  .download {
+    padding: 0.55rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .header_btn {
+    padding: 0.55rem 1rem;
+    font-size: 0.8rem;
+    border-radius: 999px;
+  }
+
+  .navbar nav ul li .header_btn {
+    width: 100%;
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* Button active state for current page */
+.header_btn.active {
+  background: linear-gradient(135deg, #6366f1 0%, #0ea5e9 100%);
+  color: white;
+  border-color: transparent;
 }

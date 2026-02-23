@@ -7,22 +7,20 @@
 <link rel="shortcut icon" href="MYphoto.png" type="image/x-icon">
   
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="/_sdk/element_sdk.js"></script>
   <link rel="stylesheet" href="styles.css">
   <style>@view-transition { navigation: auto; }</style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
   <style>
     
       
       .glasss-card {
-      background:  linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+      background:  linear-gradient(180deg, #6366f1 0%, #0ea5e9 100%);
       border-radius: 16px;
       padding: 30px;
       
       
       backdrop-filter: blur(12px);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 8px 32px rgba(99, 102, 241, 0.2);
+      border: 1px solid rgba(99, 102, 241, 0.3);
       color: #fff;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
@@ -95,31 +93,6 @@
     .animate-pop { transform-origin: center; transition: transform 0.25s ease; }
     .animate-pop:hover { transform: scale(1.04); }
 
-  promo-popup
-    #promo-popup {
-      transition: opacity 0.3s ease-out;
-    }
-    #promo-popup:not(.hidden) {
-      animation: fadeIn 0.4s ease-out;
-    }
-    #promo-popup .glasss-card {
-      animation: slideUp 0.5s ease-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes slideUp {
-      from { 
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to { 
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
     @media (max-width: 600px) {
       .glass-card {
         padding: 20px;
@@ -172,12 +145,12 @@
         <ul id="nav-menu">
           <li><a href="index.html"> <button class="header_btn">Home</button> </a></li>
           <li><a href="#about"> <button class="header_btn">About</button></a></li>
+          <li><a href="#education"> <button class="header_btn">Education</button></a></li>
+          <li><a href="#experience"> <button class="header_btn">Experience</button></a></li>
           <li><a href="#projects"> <button class="header_btn">Projects</button></a></li>
+          <li><a href="#skills"> <button class="header_btn">Skills</button></a></li>
           <li><a href="#contact"><button class="header_btn">Contact</button></a></li>
-          <li><a href="https://learn360.free.nf/" target="_blank"><button class="header_btn">Learn360</button></a></li>
-          <li><a href="https://lawreay.github.io/learn360-log-in-page-demo/" target="_blank"><button class="header_btn">Demo</button></a></li>
-          <li><a href="https://lawreay.github.io/Ntonda-Online-Quiz-System-/" target="_blank"><button class="header_btn">Quiz System</button></a></li>
-          <li><a class="download" href="LAWREAY PHUKA CURRICULUM VITAE.pdf" download="Lawrence Phuka CV"><Button>Download My CV</Button></a></li>
+          <li><a class="download" href="LAWREAY PHUKA CURRICULUM VITAE.pdf" download="Lawrence Phuka CV"><Button>Download CV</Button></a></li>
         </ul>
       </div>
     </nav>
@@ -211,16 +184,20 @@
 
 
 
-            <img class="my_PP reveal-on-scroll icon-anim" src="MYphoto.png" alt="">
+            <img class="my_PP reveal-on-scroll icon-anim" src="MYphoto.png" alt="Lawrence Phuka Chikapa" loading="lazy">
 
 
 
 
      </div>
      <h1 id="hero-name" class="text-5xl md:text-7xl font-bold mb-4">Lawrence Phuka Chikapa</h1>
-     <p id="hero-title" class="text-2xl md:text-3xl mb-6 text-blue-100">ICT Educator &amp; Creative Technologist</p>
-     <p id="hero-tagline" class="text-xl md:text-2xl mb-8 text-blue-50">Empowering Malawi Through Digital Innovation</p>
-     <div class="flex gap-4 justify-center flex-wrap"><a href="#about" class="px-8 py-3 bg-white text-blue-900 rounded-full font-semibold hover:bg-blue-50 transition-all">Learn More</a> <a href="#contact" class="px-8 py-3 bg-transparent border-2 border-white text-white rounded-full font-semibold hover:bg-white/10 transition-all">Get in Touch</a>
+     <div class="flex justify-center gap-3 mb-6 flex-wrap">
+       <span class="px-4 py-2 bg-emerald-500 text-white rounded-full text-sm font-semibold">Currently Employed</span>
+       <span class="px-4 py-2 bg-indigo-500 text-white rounded-full text-sm font-semibold">ICT Professional</span>
+     </div>
+     <p id="hero-title" class="text-2xl md:text-3xl mb-6 text-white/90">ICT Educator &amp; Creative Technologist</p>
+     <p id="hero-tagline" class="text-xl md:text-2xl mb-8 text-white/80">Empowering Malawi Through Digital Innovation</p>
+     <div class="flex gap-4 justify-center flex-wrap"><a href="#about" class="px-8 py-3 bg-white text-indigo-600 rounded-full font-bold hover:bg-gray-50 transition-all transform hover:scale-105 shadow-lg hover:shadow-2xl">Learn More</a> <a href="#contact" class="px-8 py-3 bg-transparent border-2 border-white text-white rounded-full font-bold hover:bg-white/15 transition-all hover:backdrop-blur-md">Get in Touch</a>
      </div>
     </div>
 
@@ -239,21 +216,62 @@
 
 
 
-</section><!-- Aboutme Section -->
+</section><!-- About Section -->
    <section id="about" class="section-gradient py-20 px-6">
     <div class="max-w-6xl mx-auto">
-     <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 gradient-text">PERSONAL DETAILS</h2>
-     <div class="glasss-card rounded-3xl p-8 md:p-12">
-      <div class="glass-card reveal-on-scroll">
-    <h2>👤 Lawrence Phuka Chikapa</h2>
-    <ul class="details">
-      <li><strong>Home of Origin:</strong> Ntcheu</li>
-      <li><strong>Nationality:</strong> Malawian</li>
-      <li><strong>Religion:</strong> Christian</li>
-      <li><strong>Marital Status:</strong> Single</li>
-      <li><strong>Address:</strong> Care of Chipula Primary School, P.O. Box 313, Ntcheu</li>
-    </ul>
-  </div>
+     <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 gradient-text">About Me</h2>
+     <div class="glass-card rounded-3xl p-8 md:p-12">
+      <p id="about-text" class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">I'm Lawrence Phuka Chikapa, founder of Learn360 — a free digital education platform dedicated to empowering underserved communities across Malawi. With a deep passion for accessible education, creative design, and local empowerment, I combine technical expertise with a vision for social impact.</p>
+      <p class="text-lg md:text-xl text-gray-700 leading-relaxed">As an ICT Educator and Technical Professional, I bridge the gap between technology and education, creating innovative solutions that make quality learning accessible to all Malawians, regardless of their economic background.</p>
+     </div>
+    </div>
+   </section><!-- Education & Credentials Section -->
+   <section id="education" class="section-gradient py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+     <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 gradient-text">Education & Credentials</h2>
+     <div class="grid md:grid-cols-2 gap-8">
+       <div class="glass-card rounded-2xl p-6 bg-gradient-to-br from-blue-50 to-indigo-50 reveal-on-scroll">
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">Formal Education</h3>
+        <div class="space-y-4">
+          <div><p class="font-bold text-gray-800">Secondary Education</p><p class="text-sm text-gray-600">Malawi Education System with distinction in ICT</p></div>
+          <div><p class="font-bold text-gray-800">Technical Training</p><p class="text-sm text-gray-600">Web Development, Network Administration, Educational Technology</p></div>
+        </div>
+       </div>
+       <div class="glass-card rounded-2xl p-6 bg-gradient-to-br from-cyan-50 to-blue-50 reveal-on-scroll">
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">Key Competencies</h3>
+        <ul class="space-y-2 text-gray-700 text-sm"><li>Network Security & IT Infrastructure</li><li>Educational Technology Platforms</li><li>Web Application Development</li><li>Learn360 Founder & Leader</li><li>Technical Team Leadership</li></ul>
+       </div>
+     </div>
+    </div>
+   </section><!-- Personal Information Section -->
+   <section id="personal" class="py-20 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+     <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 gradient-text">Personal Information</h2>
+     <div class="glass-card rounded-3xl p-8 md:p-12 reveal-on-scroll">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Contact & Details</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li><strong>Full Name:</strong> Lawrence Phuka Chikapa</li>
+            <li><strong>Location:</strong> Ntcheu, Malawi</li>
+            <li><strong>Nationality:</strong> Malawian</li>
+            <li><strong>Religion:</strong> Christian</li>
+            <li><strong>Email:</strong> lawreay1@gmail.com</li>
+            <li><strong>Phone:</strong> +265 993 147 700</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Current Employment</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li><strong>Status:</strong> <span class="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold">Currently Employed</span></li>
+            <li><strong>Primary Role:</strong>IT Assistant & Technical Support</li>
+            <li><strong>Organization:</strong> Malawi Adventist University</li>
+            <li><strong>Employment Start:</strong> January 2025</li>
+            <li><strong>Type:</strong> Full-Time</li>
+            <li><strong>Also Founder:</strong> Learn360 Platform (Aug 2025)</li>
+          </ul>
+        </div>
+      </div>
      </div>
     </div>
 
@@ -293,7 +311,7 @@
         </div>
         <div class="md:w-1/2">
          <div class="glass-card rounded-2xl p-6 bg-gradient-to-br from-blue-50 to-purple-50">
-          <h3 id="exp2-title" class="text-2xl font-bold text-gray-800 mb-2">Junior IT Assistant &amp; Technical Support</h3>
+          <h3 id="exp2-title" class="text-2xl font-bold text-gray-800 mb-2">IT Assistant &amp; Technical Support</h3>
           <p id="exp2-org" class="text-lg text-purple-600 font-semibold mb-3">Malawi Adventist University</p>
           <p id="exp2-period" class="text-sm text-gray-600 mb-4">Jan 2025 - Present</p>
           <p id="exp2-desc" class="text-gray-700">Provide technical leadership, network security management, and educational technology support. Train faculty and students in digital tools while maintaining critical IT infrastructure.</p>
@@ -342,12 +360,12 @@
         <a href="https://learn360.free.nf" target="_blank">
         <div class="glass-card rounded-2xl overflow-hidden reveal-on-scroll animate-pop">
     <div class="project-card-image">
-     <img src="learn360.png" alt="Learn360 Platform" class="project-image reveal-on-scroll">
+     <img src="learn360.png" alt="Learn360 Platform" class="project-image" loading="lazy">
     </div>
        <div class="p-6">
         <h3 id="proj1-title" class="text-xl font-bold text-gray-800 mb-3">Learn360 Platform</h3>
         <p id="proj1-desc" class="text-gray-700 mb-4">Comprehensive digital education platform offering free courses, video lessons, and interactive content for Malawian students and lifelong learners.</p>
-        <div class="flex flex-wrap gap-2"> <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">WordPress</span> <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">LMS</span> <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm">Divi</span><button class="download">View Demo</button>
+        <div class="flex flex-wrap gap-2"> <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">WordPress</span> <span class="px-3 py-1 bg-cyan-100 text-cyan-700 rounded-full text-sm">LMS</span> <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm">Divi</span><button class="download">View Demo</button>
         </div>
        </div>
 
@@ -361,12 +379,12 @@
       </div></a><!-- Project 2 -->
       <a href="https://lawreay.github.io/Ntonda-Online-Quiz-System-/"><div class="glass-card rounded-2xl overflow-hidden reveal-on-scroll animate-pop">
        <div class="project-card-image">
-        <img src="1.jpg" alt="Ntonda Quiz System" class="project-image reveal-on-scroll">
+        <img src="1.jpg" alt="Ntonda Quiz System" class="project-image" loading="lazy">
        </div>
        <div class="p-6">
         <h3 id="proj2-title" class="text-xl font-bold text-gray-800 mb-3">Ntonda Online Quiz System</h3>
         <p id="proj2-desc" class="text-gray-700 mb-4">Interactive assessment platform enabling students to test their knowledge with instant feedback and progress tracking across multiple subjects.</p>
-        <div class="flex flex-wrap gap-2"><span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">PHP</span> <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">MySQL</span> <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">JavaScript</span> <button class="download">View Demo</button>
+        <div class="flex flex-wrap gap-2"><span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">PHP</span> <span class="px-3 py-1 bg-cyan-100 text-cyan-700 rounded-full text-sm">MySQL</span> <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm">JavaScript</span> <button class="download">View Demo</button>
         </div>
        </div>
       </div></a>
@@ -386,12 +404,12 @@
       <!-- Project 3 -->
       <div class="glass-card rounded-2xl overflow-hidden reveal-on-scroll animate-pop">
        <div class="project-card-image">
-        <img src="2019-polar-lights-background.jpg" alt="Educational Animation" class="project-image reveal-on-scroll">
+        <img src="2019-polar-lights-background.jpg" alt="Educational Animation" class="project-image" loading="lazy">
        </div>
        <div class="p-6">
         <h3 id="proj3-title" class="text-xl font-bold text-gray-800 mb-3">Educational Animation Content</h3>
         <p id="proj3-desc" class="text-gray-700 mb-4">Engaging animated videos explaining complex concepts in science, mathematics, and technology, making learning accessible and fun for all ages.</p>
-        <div class="flex flex-wrap gap-2"><span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">Animation</span> <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Video Editing</span> <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">Design</span>
+        <div class="flex flex-wrap gap-2"><span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">Animation</span> <span class="px-3 py-1 bg-cyan-100 text-cyan-700 rounded-full text-sm">Video Editing</span> <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm">Design</span>
         <button class="download">View Demo</button></div>
        </div>
       </div>
@@ -421,7 +439,7 @@
 
 
 
-                                                  <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-blue-50 to-purple-50 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer reveal-on-scroll animate-pop">
+                                                  <div class="skill-badge glass-card rounded-xl p-6 text-center bg-gradient-to-br from-indigo-50 to-blue-50 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer reveal-on-scroll animate-pop">
                                                   <div class="text-4xl mb-3">
                                                     <img class="core icon-anim reveal-on-scroll" src="baseline_computer_black_48.png" alt="">                                                 </div>
                                                   <p class="font-semibold text-gray-800">HTML, CSS & JavaSript</p>
@@ -655,35 +673,27 @@
       <p id="vision-text" class="text-lg text-gray-700 leading-relaxed mb-8">My vision is to scale Learn360 into a national hub for free digital learning, reaching every corner of Malawi. By leveraging technology, partnerships, and community engagement, I aim to democratize access to quality education and empower the next generation of Malawian innovators.</p>
       
    </section><!-- Contact Section -->
-   <section id="contact" class="py-20 px-6 bg-gradient-to-br from-blue-900 to-purple-900 text-white">
+   <section id="contact" class="py-20 px-6 bg-gradient-to-br from-indigo-900 to-cyan-900 text-white">
     <div class="max-w-4xl mx-auto text-center">
      <h2 class="text-4xl md:text-5xl font-bold mb-12">Let's Connect</h2>
      <p id="contact-intro" class="text-xl mb-12 text-blue-100">Interested in collaboration, partnerships, or learning more about Learn360? I'd love to hear from you!</p>
      <div class="grid md:grid-cols-2 gap-8 mb-12">
-      <div class="glass-card rounded-2xl p-6">
-       <div class="text-4xl mb-4">
-        <img class="core icon-anim reveal-on-scroll" src="baseline_mark_email_unread_black_18pt_3x.png" alt="">
-       </div>
-       <h3 class="text-xl font-bold mb-2">Email</h3><a href="mailto:lawreay1@gmail.com" class="text-blue-200 hover:text-white transition-colors">lawreay1@gmail.com</a>
+      <div class="glass-card rounded-2xl p-6 bg-gradient-to-br from-indigo-50 to-blue-50">
+       <div class="text-4xl mb-4">✉</div>
+       <h3 class="text-xl font-bold mb-2">Email</h3><a href="mailto:lawreay1@gmail.com" class="text-indigo-600 hover:text-indigo-700 transition-colors font-semibold">lawreay1@gmail.com</a>
       </div>
-      <div class="glass-card rounded-2xl p-6">
-       <div class="text-4xl mb-4">
-       <img class="core icon-anim reveal-on-scroll" src="baseline_speaker_phone_black_18pt_3x.png" alt="">
-       </div>
-       <h3 class="text-xl font-bold mb-2">WhatsApp</h3><a href="https://wa.me/265885172857" target="_blank" rel="noopener noreferrer" class="text-blue-200 hover:text-white transition-colors">+265 993 147 700</a>
+      <div class="glass-card rounded-2xl p-6 bg-gradient-to-br from-cyan-50 to-blue-50">
+       <div class="text-4xl mb-4">💬</div>
+       <h3 class="text-xl font-bold mb-2">WhatsApp</h3><a href="https://wa.me/265885172857" target="_blank" rel="noopener noreferrer" class="text-cyan-600 hover:text-cyan-700 transition-colors font-semibold">+265 993 147 700</a>
       </div>
-      <div class="glass-card rounded-2xl p-6">
-       <div class="text-4xl mb-4">
-        <img class="core icon-anim reveal-on-scroll" src="sharp_map_black_48.png" alt="">
-       </div>
+      <div class="glass-card rounded-2xl p-6 bg-gradient-to-br from-orange-50 to-yellow-50">
+       <div class="text-4xl mb-4">📍</div>
        <h3 class="text-xl font-bold mb-2">Location</h3>
-       <p class="text-blue-200">Ntcheu, Malawi</p>
+       <p class="text-orange-600 font-semibold">Ntcheu, Malawi</p>
       </div>
-      <div class="glass-card rounded-2xl p-6">
-       <div class="text-4xl mb-4">
-        <img class="core icon-anim reveal-on-scroll" src="icons8-website-50.png" alt="">
-       </div>
-       <h3 class="text-xl font-bold mb-2">Learn360</h3><a href="https://learn360.free.nf" target="_blank" rel="noopener noreferrer" class="text-blue-200 hover:text-white transition-colors">learn360.free.nf</a>
+      <div class="glass-card rounded-2xl p-6 bg-gradient-to-br from-pink-50 to-rose-50">
+       <div class="text-4xl mb-4">🌐</div>
+       <h3 class="text-xl font-bold mb-2">Learn360</h3><a href="https://learn360.free.nf" target="_blank" rel="noopener noreferrer" class="text-pink-600 hover:text-pink-700 transition-colors font-semibold">learn360.free.nf</a>
       </div>
      </div>
      <div class="flex gap-6 justify-center w-full">
@@ -748,7 +758,7 @@
     </div>
    </section><!-- Footer -->
    <footer class="bg-gray-900 text-gray-400 py-8 px-6 text-center">
-    <p id="footer-text">© 2024 Lawrence Phuka Chikapa | LAWREAY Portfolio | Empowering Malawi Through Digital Innovation</p>
+    <p id="footer-text">© 2026 Lawrence Phuka Chikapa | LAWREAY Portfolio | Empowering Malawi Through Digital Innovation</p>
    </footer>
   </div>
   <script>
@@ -779,11 +789,11 @@
       vision_text: "My vision is to scale Learn360 into a national hub for free digital learning, reaching every corner of Malawi. By leveraging technology, partnerships, and community engagement, I aim to democratize access to quality education and empower the next generation of Malawian innovators.",
       contact_intro: "Interested in collaboration, partnerships, or learning more about Learn360? I'd love to hear from you!",
       footer_text: "© 2024 Lawrence Phuka Chikapa | LAWREAY Portfolio | Empowering Malawi Through Digital Innovation",
-      background_color: "#1e3a8a",
+      background_color: "#1e293b",
       surface_color: "#ffffff",
       text_color: "#1f2937",
-      primary_action_color: "#3b82f6",
-      secondary_action_color: "#8b5cf6",
+      primary_action_color: "#6366f1",
+      secondary_action_color: "#0ea5e9",
       font_family: "sans-serif",
       font_size: 16
     };
@@ -870,102 +880,7 @@
       document.getElementById('footer-text').textContent = config.footer_text || defaultConfig.footer_text;
     }
 
-    function mapToCapabilities(config) {
-      return {
-        recolorables: [
-          {
-            get: () => config.background_color || defaultConfig.background_color,
-            set: (value) => {
-              config.background_color = value;
-              window.elementSdk.setConfig({ background_color: value });
-            }
-          },
-          {
-            get: () => config.surface_color || defaultConfig.surface_color,
-            set: (value) => {
-              config.surface_color = value;
-              window.elementSdk.setConfig({ surface_color: value });
-            }
-          },
-          {
-            get: () => config.text_color || defaultConfig.text_color,
-            set: (value) => {
-              config.text_color = value;
-              window.elementSdk.setConfig({ text_color: value });
-            }
-          },
-          {
-            get: () => config.primary_action_color || defaultConfig.primary_action_color,
-            set: (value) => {
-              config.primary_action_color = value;
-              window.elementSdk.setConfig({ primary_action_color: value });
-            }
-          },
-          {
-            get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
-            set: (value) => {
-              config.secondary_action_color = value;
-              window.elementSdk.setConfig({ secondary_action_color: value });
-            }
-          }
-        ],
-        borderables: [],
-        fontEditable: {
-          get: () => config.font_family || defaultConfig.font_family,
-          set: (value) => {
-            config.font_family = value;
-            window.elementSdk.setConfig({ font_family: value });
-          }
-        },
-        fontSizeable: {
-          get: () => config.font_size || defaultConfig.font_size,
-          set: (value) => {
-            config.font_size = value;
-            window.elementSdk.setConfig({ font_size: value });
-          }
-        }
-      };
-    }
 
-    function mapToEditPanelValues(config) {
-      return new Map([
-        ["hero_name", config.hero_name || defaultConfig.hero_name],
-        ["hero_title", config.hero_title || defaultConfig.hero_title],
-        ["hero_tagline", config.hero_tagline || defaultConfig.hero_tagline],
-        ["about_text", config.about_text || defaultConfig.about_text],
-        ["exp1_title", config.exp1_title || defaultConfig.exp1_title],
-        ["exp1_org", config.exp1_org || defaultConfig.exp1_org],
-        ["exp1_period", config.exp1_period || defaultConfig.exp1_period],
-        ["exp1_desc", config.exp1_desc || defaultConfig.exp1_desc],
-        ["exp2_title", config.exp2_title || defaultConfig.exp2_title],
-        ["exp2_org", config.exp2_org || defaultConfig.exp2_org],
-        ["exp2_period", config.exp2_period || defaultConfig.exp2_period],
-        ["exp2_desc", config.exp2_desc || defaultConfig.exp2_desc],
-        ["exp3_title", config.exp3_title || defaultConfig.exp3_title],
-        ["exp3_org", config.exp3_org || defaultConfig.exp3_org],
-        ["exp3_period", config.exp3_period || defaultConfig.exp3_period],
-        ["exp3_desc", config.exp3_desc || defaultConfig.exp3_desc],
-        ["proj1_title", config.proj1_title || defaultConfig.proj1_title],
-        ["proj1_desc", config.proj1_desc || defaultConfig.proj1_desc],
-        ["proj2_title", config.proj2_title || defaultConfig.proj2_title],
-        ["proj2_desc", config.proj2_desc || defaultConfig.proj2_desc],
-        ["proj3_title", config.proj3_title || defaultConfig.proj3_title],
-        ["proj3_desc", config.proj3_desc || defaultConfig.proj3_desc],
-        ["vision_title", config.vision_title || defaultConfig.vision_title],
-        ["vision_text", config.vision_text || defaultConfig.vision_text],
-        ["contact_intro", config.contact_intro || defaultConfig.contact_intro],
-        ["footer_text", config.footer_text || defaultConfig.footer_text]
-      ]);
-    }
-
-    if (window.elementSdk) {
-      window.elementSdk.init({
-        defaultConfig,
-        onConfigChange,
-        mapToCapabilities,
-        mapToEditPanelValues
-      });
-    }
 
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1016,9 +931,39 @@
           if (window.innerWidth <= 1024 && header) {
             setTimeout(() => header.classList.add('collapsed'), 350);
           }
+          // Set active button
+          updateActiveButton();
         });
       });
     }
+
+    // Update active nav button based on scroll position
+    function updateActiveButton() {
+      const sections = document.querySelectorAll('section[id]');
+      const navButtons = document.querySelectorAll('.header_btn');
+      
+      let currentSection = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (window.scrollY >= sectionTop) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+
+      navButtons.forEach(btn => {
+        btn.classList.remove('active');
+        const btnHref = btn.closest('a')?.getAttribute('href');
+        if (btnHref === `#${currentSection}` || (currentSection === '' && btnHref === 'index.html')) {
+          btn.classList.add('active');
+        }
+      });
+    }
+
+    // Listen to scroll and update active button
+    window.addEventListener('scroll', updateActiveButton);
+    
+    // Initialize active button on page load
+    updateActiveButton();
 
     // Theme toggle: remember preference in localStorage
     function applyTheme(theme) {
@@ -1026,14 +971,14 @@
         document.documentElement.setAttribute('data-theme', 'dark');
         if (themeBtn) {
           themeBtn.classList.add('active');
-          themeBtn.textContent = '☀️';
+          themeBtn.textContent = 'Dark';
           themeBtn.setAttribute('aria-pressed', 'true');
         }
       } else {
         document.documentElement.removeAttribute('data-theme');
         if (themeBtn) {
           themeBtn.classList.remove('active');
-          themeBtn.textContent = '🌙';
+          themeBtn.textContent = 'Light';
           themeBtn.setAttribute('aria-pressed', 'false');
         }
       }
@@ -1134,76 +1079,25 @@
 </script>
 
 
-<!-- Promo converted from fullscreen modal to a bottom non-fullscreen bar -->
-<div id="promo-popup" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-[2000] w-full max-w-3xl mx-4" role="region" aria-label="Promo">
-  <div class="relative w-full glasss-card px-4 py-3 flex items-center gap-4">
-    <div class="flex-1 text-left">
-      <h2 class="text-lg font-bold text-white">Need a Professional Website?</h2>
-      <p class="text-white/90 text-sm">Get a custom-built, responsive website at an affordable price. I specialize in modern, responsive designs and e-commerce.</p>
-    </div>
-    <div class="flex gap-3">
-      <a href="mailto:lawreay1@gmail.com?subject=Website%20Development%20Inquiry&body=Hi%20Lawrence%2C%0A%0AI'm%20interested%20in%20getting%20a%20website%20built.%20" 
-         class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-purple-500 to-indigo-600 rounded-lg hover:opacity-90 transition-opacity">
-        Email
-      </a>
-      <a href="https://wa.me/265993147700?text=Hi%20Lawrence%2C%20I'm%20interested%20in%20getting%20a%20website%20built." target="_blank" rel="noopener"
-         class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white border border-white/20 rounded-lg hover:bg-white/10 transition-colors">
-        WhatsApp
-      </a>
-    </div>
-    <button class="ml-3 text-white/80 hover:text-white" aria-label="Close promo" onclick="document.getElementById('promo-popup').style.display='none'">
-      <span class="sr-only">Close</span>
-      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-      </svg>
-    </button>
-  </div>
-</div>
-
 <script>
   
-  setTimeout(() => {
-    const popup = document.getElementById('promo-popup');
-    if (popup) {
-      popup.classList.remove('hidden');
-      popup.classList.add('flex');
-    }
-  }, 50000); // 30 seconds
 
-  function closePromo() {
-    const popup = document.getElementById('promo-popup');
-    if (popup) {
-      popup.classList.add('hidden');
-      popup.classList.remove('flex');
-    }
-  }
-
-
-  document.querySelector('[data-close]')?.addEventListener('click', closePromo);
-
-  // Close popup with Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closePromo();
-  });
-</script>
- 
-<!-- Mini floating chatbot (client-side, rule-based) -->
 <style>
 
-  .mini-chat-button { position: fixed; right: 20px; bottom: 20px; width: 56px; height: 56px; border-radius: 999px; background: linear-gradient(135deg,#c7ceeb,#d3a6ff); color: #fff; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(2,6,23,0.4); cursor:pointer; z-index:2200 }
-  .mini-chat-panel { position: fixed; right: 20px; bottom: 88px; width: 320px; max-width: calc(100% - 40px); background: linear-gradient(180deg, rgba(0, 1, 58, 0.911), rgba(74, 104, 236, 0.747)); border-radius: 12px; box-shadow: 0 20px 60px rgb(2, 6, 23); z-index:2200; color: #fff; overflow:hidden; display:none; }
+  .mini-chat-button { position: fixed; right: 20px; bottom: 20px; width: 56px; height: 56px; border-radius: 999px; background: linear-gradient(135deg,#6366f1,#0ea5e9); color: #fff; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(99, 102, 241,0.3); cursor:pointer; z-index:2200 }
+  .mini-chat-panel { position: fixed; right: 20px; bottom: 88px; width: 320px; max-width: calc(100% - 40px); background: linear-gradient(180deg, rgba(30, 41, 59, 0.95), rgba(99, 102, 241, 0.8)); border-radius: 12px; box-shadow: 0 20px 60px rgba(99, 102, 241, 0.3); z-index:2200; color: #fff; overflow:hidden; display:none; }
   .mini-chat-panel.open { display:block; }
   .mini-chat-header { display:flex; align-items:center; justify-content:space-between; padding:10px 12px; border-bottom:1px solid rgb(255, 255, 255); }
   .mini-chat-title { font-weight:700; font-size:14px; }
   .mini-chat-body { max-height:260px; overflow:auto; padding:12px; font-size:14px; line-height:1.4; }
   .mini-chat-message { margin:8px 0; padding:8px 10px; border-radius:8px; display:inline-block; max-width:100%; }
   .mini-chat-message.user { background: rgb(0, 50, 100); color:#ffffff; align-self:flex-end; }
-  .mini-chat-message.bot { background: rgba(102, 126, 234, 0.932); color:#fff; }
+  .mini-chat-message.bot { background: rgba(99, 102, 241, 0.85); color:#fff; }
   .mini-chat-input { display:flex; gap:8px; padding:10px; border-top:1px solid rgb(255, 255, 255); }
   .mini-chat-input textarea { flex:1; resize:none; padding:8px; border-radius:8px; background:transparent; color:#fff; border:1px solid rgba(255, 255, 255, 0.233); min-height:40px; }
-  .mini-chat-input button { padding:8px 10px; border-radius:8px; background:#667eea; color:#fff; border:none; cursor:pointer; }
+  .mini-chat-input button { padding:8px 10px; border-radius:8px; background:#6366f1; color:#fff; border:none; cursor:pointer; transition: all 0.3s ease; }
   .mini-chat-suggestions { display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
-  .mini-chat-suggestion { background-color: rgba(74, 104, 236, 0.747); padding:6px 8px; border-radius:999px; font-size:13px; cursor:pointer; }
+  .mini-chat-suggestion { background-color: rgba(99, 102, 241, 0.85); padding:6px 8px; border-radius:999px; font-size:13px; cursor:pointer; transition: all 0.2s ease; }
   @media (max-width:420px){ .mini-chat-panel{ right:10px; left:10px; width:auto; bottom:80px } }
 </style>
 
@@ -1308,6 +1202,42 @@
 <!-- Scroll reveal script: adds 'show' to elements with class 'reveal-on-scroll' when visible -->
 <script>
   (function(){
+    // Image Loading Handler
+    function initImageLoading() {
+      const images = document.querySelectorAll('img');
+      
+      images.forEach(img => {
+        // If image is already cached/loaded synchronously
+        if (img.complete) {
+          img.style.opacity = '1';
+        } else {
+          // Add initial opacity
+          img.style.opacity = '0';
+          img.style.transition = 'opacity 0.6s ease-in-out';
+          
+          // Fade in on load
+          img.addEventListener('load', function() {
+            this.style.opacity = '1';
+          });
+          
+          // Fallback fade in after timeout
+          setTimeout(() => {
+            if (img.style.opacity !== '1') {
+              img.style.opacity = '1';
+            }
+          }, 3000);
+        }
+      });
+    }
+
+    // Initialize on DOM ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initImageLoading);
+    } else {
+      initImageLoading();
+    }
+
+    // Scroll reveal observer
     const revealEls = document.querySelectorAll('.reveal-on-scroll');
     const progress = document.getElementById('scroll-progress');
     const navbar = document.querySelector('.navbar');
