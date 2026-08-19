@@ -115,10 +115,11 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 2rem;
+  gap: .35rem;
   list-style: none;
   margin: 0;
   padding: 0.5rem 0;
+  min-width: 0;
 }
 
 .hamburger {
@@ -233,7 +234,7 @@
   text-decoration: none;
   color: rgba(255, 255, 255, 0.85);
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 0.82rem;
   transition: all 0.3s ease;
   padding: 0.5rem 0.75rem;
   border-radius: 6px;
@@ -245,11 +246,11 @@
 }
 
 .download {
-  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  background: #d97706;
   color: white;
   border: none;
-  border-radius: 8px;
-  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  padding: 0.6rem .85rem;
   font-weight: 600;
   font-size: 0.95rem;
   transition: all 0.3s ease;
