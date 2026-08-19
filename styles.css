@@ -68,3 +68,144 @@
     
     width: 200px;
   }
+
+/* Portfolio design system: practical, editorial and Bootstrap-friendly. */
+:root {
+  --ink: #17202a;
+  --navy: #17324d;
+  --navy-deep: #102638;
+  --amber: #d97706;
+  --paper: #f5f3ef;
+  --surface: #ffffff;
+  --muted: #5f6b76;
+  --line: #d8dee3;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+body.font-sans,
+body.font-sans p,
+body.font-sans button,
+body.font-sans a,
+body.font-sans li {
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+.hero-gradient {
+  background: linear-gradient(115deg, rgba(16, 38, 56, .96), rgba(23, 50, 77, .78)), url(backg.jpg) center / cover;
+  min-height: 680px;
+}
+
+.section-gradient,
+#projects,
+#about,
+#vision {
+  background: var(--paper) !important;
+}
+
+.glass-card,
+.glasss-card {
+  background: var(--surface) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: .35rem !important;
+  box-shadow: 0 8px 24px rgba(23, 32, 42, .07) !important;
+  color: var(--ink) !important;
+  backdrop-filter: none !important;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.glass-card:hover,
+.skill-badge:hover {
+  background: var(--surface) !important;
+  border-color: #aebbc5 !important;
+  box-shadow: 0 12px 28px rgba(23, 32, 42, .12) !important;
+  transform: translateY(-4px);
+}
+
+.gradient-text {
+  color: var(--navy) !important;
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
+}
+
+.timeline-line {
+  background: var(--line) !important;
+}
+
+.project-card-image {
+  background: #e9eef1 !important;
+}
+
+.project-image {
+  height: 210px;
+}
+
+.text-purple-600,
+.text-purple-700,
+.text-purple-400 {
+  color: var(--navy) !important;
+}
+
+.bg-purple-100,
+.bg-blue-50,
+.bg-purple-50,
+.bg-green-50,
+.bg-yellow-50 {
+  background-color: #edf1f3 !important;
+}
+
+.bg-gradient-to-br,
+.bg-gradient-to-r,
+.bg-gradient-to-b {
+  background-image: none !important;
+  background-color: var(--surface) !important;
+}
+
+#experience {
+  background: var(--surface) !important;
+}
+
+#experience .w-12.h-12 {
+  background: var(--navy) !important;
+}
+
+#contact {
+  background: var(--navy-deep) !important;
+}
+
+#contact .glass-card {
+  background: rgba(255, 255, 255, .06) !important;
+  border-color: rgba(255, 255, 255, .2) !important;
+  color: #fff !important;
+}
+
+.download,
+.header_btn {
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+.download {
+  background: var(--amber) !important;
+  border: 1px solid var(--amber) !important;
+  color: #fff !important;
+  border-radius: .25rem !important;
+}
+
+@media (max-width: 768px) {
+  .hero-gradient {
+    min-height: 600px;
+  }
+
+  .timeline-line {
+    left: 20px;
+  }
+}
