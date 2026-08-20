@@ -1,0 +1,337 @@
+
+    body {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow-x:scroll;
+    }
+    
+    html {
+      height: 100%;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .timeline-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+    }
+
+    @media (max-width: 768px) {
+      .timeline-line {
+        left: 20px;
+      }
+    }
+
+    .skill-badge {
+      transition: all 0.3s ease;
+    }
+
+    .skill-badge:hover {
+      transform: scale(1.1);
+    }
+
+    .hero-gradient {
+      background-image:url(../assets/images/backg.jpg);
+      background-repeat:initial;
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+    }
+
+    .section-gradient {
+      background: linear-gradient(180deg, #f8fafc 0%, #e0e7ff 100%);
+    }
+  .pp{
+    
+    width: 200px;
+  }
+
+/* Portfolio design system: practical, editorial and Bootstrap-friendly. */
+:root {
+  --ink: #17202a;
+  --navy: #17324d;
+  --navy-deep: #102638;
+  --amber: #d97706;
+  --paper: #f5f3ef;
+  --surface: #ffffff;
+  --muted: #5f6b76;
+  --line: #d8dee3;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+body.font-sans,
+body.font-sans p,
+body.font-sans button,
+body.font-sans a,
+body.font-sans li {
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+.hero-gradient {
+  background: linear-gradient(115deg, rgba(16, 38, 56, .96), rgba(23, 50, 77, .78)), url(../assets/images/backg.jpg) center / cover;
+  min-height: 680px;
+}
+
+.section-gradient,
+#projects,
+#about,
+#vision {
+  background: var(--paper) !important;
+}
+
+.glass-card,
+.glasss-card {
+  background: var(--surface) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: .35rem !important;
+  box-shadow: 0 8px 24px rgba(23, 32, 42, .07) !important;
+  color: var(--ink) !important;
+  backdrop-filter: none !important;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.glass-card:hover,
+.skill-badge:hover {
+  background: var(--surface) !important;
+  border-color: #aebbc5 !important;
+  box-shadow: 0 12px 28px rgba(23, 32, 42, .12) !important;
+  transform: translateY(-4px);
+}
+
+.gradient-text {
+  color: var(--navy) !important;
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
+}
+
+.timeline-line {
+  background: var(--line) !important;
+}
+
+.project-card-image {
+  background: #e9eef1 !important;
+}
+
+.project-card-logo {
+  display: block;
+  width: min(78%, 260px);
+  height: 150px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.project-image {
+  height: 210px;
+}
+
+.project-link {
+  display: inline-block;
+  padding: .65rem 1rem;
+  background: var(--navy) !important;
+  color: #fff !important;
+  border: 2px solid var(--navy);
+  border-radius: .25rem;
+  font-weight: 700;
+  text-decoration: none;
+  line-height: 1.2;
+  box-shadow: 0 2px 5px rgba(16, 38, 56, .2);
+}
+
+.project-link:hover,
+.project-link:focus-visible {
+  background: var(--amber) !important;
+  border-color: var(--amber);
+  color: #fff !important;
+}
+
+.text-purple-600,
+.text-purple-700,
+.text-purple-400 {
+  color: var(--navy) !important;
+}
+
+.bg-purple-100,
+.bg-blue-50,
+.bg-purple-50,
+.bg-green-50,
+.bg-yellow-50 {
+  background-color: #edf1f3 !important;
+}
+
+.bg-gradient-to-br,
+.bg-gradient-to-r,
+.bg-gradient-to-b {
+  background-image: none !important;
+  background-color: var(--surface) !important;
+}
+
+#experience {
+  background: var(--surface) !important;
+}
+
+#experience .w-12.h-12 {
+  background: var(--navy) !important;
+}
+
+#contact {
+  background: var(--navy-deep) !important;
+}
+
+#contact .glass-card {
+  background: rgba(255, 255, 255, .06) !important;
+  border-color: rgba(255, 255, 255, .2) !important;
+  color: #fff !important;
+}
+
+.download,
+.header_btn {
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+.download {
+  background: var(--amber) !important;
+  border: 1px solid var(--amber) !important;
+  color: #fff !important;
+  border-radius: .25rem !important;
+}
+
+@media (max-width: 768px) {
+  .hero-gradient {
+    min-height: 600px;
+  }
+
+  .timeline-line {
+    left: 20px;
+  }
+}
+
+/* Compatibility utilities for the existing markup while it is progressively
+   using Bootstrap components and grid utilities. */
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+.top-0 { top: 0; }
+.left-0 { left: 0; }
+.right-0 { right: 0; }
+.inset-0 { inset: 0; }
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+.min-h-screen { min-height: 100vh; }
+.max-w-4xl { max-width: 56rem; }
+.max-w-6xl { max-width: 72rem; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.mt-16 { margin-top: 4rem; }
+.mb-2 { margin-bottom: .5rem; }
+.mb-3 { margin-bottom: .75rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.mb-8 { margin-bottom: 2rem; }
+.mb-12 { margin-bottom: 3rem; }
+.mb-16 { margin-bottom: 4rem; }
+.mt-20 { margin-top: 5rem; }
+.p-6 { padding: 1.5rem; }
+.p-8 { padding: 2rem; }
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+.px-8 { padding-left: 2rem; padding-right: 2rem; }
+.py-2 { padding-top: .5rem; padding-bottom: .5rem; }
+.py-3 { padding-top: .75rem; padding-bottom: .75rem; }
+.py-5 { padding-top: 3rem; padding-bottom: 3rem; }
+.py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+.py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.flex-1 { flex: 1 1 0%; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.gap-2 { gap: .5rem; }
+.gap-3 { gap: .75rem; }
+.gap-4 { gap: 1rem; }
+.gap-6 { gap: 1.5rem; }
+.gap-8 { gap: 2rem; }
+.grid { display: grid; }
+.grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-white { color: #fff !important; }
+.text-gray-500 { color: #6b7280 !important; }
+.text-gray-600 { color: #4b5563 !important; }
+.text-gray-700 { color: #374151 !important; }
+.text-gray-800 { color: #1f2937 !important; }
+.text-blue-100,
+.text-blue-200,
+.text-blue-50 { color: #d9e5ee !important; }
+.text-xl { font-size: 1.25rem; }
+.text-2xl { font-size: 1.5rem; }
+.text-3xl { font-size: 1.875rem; }
+.text-4xl { font-size: 2.25rem; }
+.text-5xl { font-size: 3rem; }
+.font-bold { font-weight: 700; }
+.font-semibold { font-weight: 600; }
+.leading-relaxed { line-height: 1.625; }
+.rounded-lg { border-radius: .375rem; }
+.rounded-xl { border-radius: .5rem; }
+.rounded-2xl { border-radius: .75rem; }
+.rounded-3xl { border-radius: 1rem; }
+.rounded-full { border-radius: 9999px; }
+.overflow-hidden { overflow: hidden; }
+.inline-block { display: inline-block; }
+.inline-flex { display: inline-flex; }
+.space-y-2 > * + * { margin-top: .5rem; }
+.space-y-4 > * + * { margin-top: 1rem; }
+.space-y-12 > * + * { margin-top: 3rem; }
+.hidden { display: none !important; }
+
+@media (min-width: 768px) {
+  .md\:flex-row { flex-direction: row; }
+  .md\:w-1\/2 { width: 50%; }
+  .md\:w-1\/2 { flex: 0 0 50%; }
+  .md\:text-right { text-align: right; }
+  .md\:text-xl { font-size: 1.25rem; }
+  .md\:text-3xl { font-size: 1.875rem; }
+  .md\:text-4xl { font-size: 2.25rem; }
+  .md\:text-5xl { font-size: 3rem; }
+  .md\:text-7xl { font-size: 4.5rem; }
+  .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 992px) {
+  .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}

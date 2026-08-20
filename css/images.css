@@ -56,14 +56,14 @@
 
 /* Background Images */
 .hero-gradient {
-    background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.9)), url('backg.jpg');
+    background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.9)), url('../assets/images/backg.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
 
 .section-gradient {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.97), rgba(255, 255, 255, 0.97)), url('background-blur-bright-220067.jpg');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.97), rgba(255, 255, 255, 0.97)), url('../assets/images/background-blur-bright-220067.jpg');
     background-size: cover;
     background-position: center;
 }

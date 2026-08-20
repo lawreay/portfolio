@@ -42,14 +42,14 @@
 
 /* Background image styles */
 .hero-gradient {
-  background-image: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8)), url('backg.jpg');
+  background-image: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8)), url('../assets/images/backg.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 
 .section-gradient {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.97), rgba(255, 255, 255, 0.97)), url('Computer-Science-Desktop-Background.jpg');
+  background-image: linear-gradient(rgba(255, 255, 255, 0.97), rgba(255, 255, 255, 0.97)), url('../assets/images/Computer-Science-Desktop-Background.jpg');
   background-size: cover;
   background-position: center;
 }
