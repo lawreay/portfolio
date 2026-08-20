@@ -1472,25 +1472,6 @@
 </script>
 
 <!-- Mini floating chatbot (client-side, rule-based) -->
-<style>
-
-  .mini-chat-button { position: fixed; right: 20px; bottom: 20px; width: 56px; height: 56px; border-radius: 999px; background: #d97706; color: #fff; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(2,6,23,0.4); cursor:pointer; z-index:2200 }
-  .mini-chat-panel { position: fixed; right: 20px; bottom: 88px; width: 320px; max-width: calc(100% - 40px); background: #17324d; border-radius: 6px; box-shadow: 0 20px 60px rgb(2, 6, 23); z-index:2200; color: #fff; overflow:hidden; display:none; }
-  .mini-chat-panel.open { display:block; }
-  .mini-chat-header { display:flex; align-items:center; justify-content:space-between; padding:10px 12px; border-bottom:1px solid rgb(255, 255, 255); }
-  .mini-chat-title { font-weight:700; font-size:14px; }
-  .mini-chat-body { max-height:260px; overflow:auto; padding:12px; font-size:14px; line-height:1.4; }
-  .mini-chat-message { margin:8px 0; padding:8px 10px; border-radius:8px; display:inline-block; max-width:100%; }
-  .mini-chat-message.user { background: rgb(0, 50, 100); color:#ffffff; align-self:flex-end; }
-  .mini-chat-message.bot { background: #315b7d; color:#fff; }
-  .mini-chat-input { display:flex; gap:8px; padding:10px; border-top:1px solid rgb(255, 255, 255); }
-  .mini-chat-input textarea { flex:1; resize:none; padding:8px; border-radius:8px; background:transparent; color:#fff; border:1px solid rgba(255, 255, 255, 0.233); min-height:40px; }
-  .mini-chat-input button { padding:8px 10px; border-radius:4px; background:#d97706; color:#fff; border:none; cursor:pointer; }
-  .mini-chat-suggestions { display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
-  .mini-chat-suggestion { background-color: rgba(74, 104, 236, 0.747); padding:6px 8px; border-radius:999px; font-size:13px; cursor:pointer; }
-  @media (max-width:420px){ .mini-chat-panel{ right:10px; left:10px; width:auto; bottom:80px } }
-</style>
-
 <div id="mini-chat" aria-hidden="false">
   <div id="mini-chat-panel" class="mini-chat-panel" role="dialog" aria-label="Site assistant">
     <div class="mini-chat-header">
