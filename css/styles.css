@@ -216,16 +216,8 @@ body.font-sans li {
   color: #fff !important;
 }
 
-.download,
 .header_btn {
   font-family: 'Trebuchet MS', Arial, sans-serif;
-}
-
-.download {
-  background: var(--amber) !important;
-  border: 1px solid var(--amber) !important;
-  color: #fff !important;
-  border-radius: .25rem !important;
 }
 
 @media (max-width: 768px) {
