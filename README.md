@@ -52,7 +52,7 @@ Then visit `http://localhost:8000`.
 ## Notable Features
 
 - Responsive portfolio layout with Bootstrap utilities
-- Project cards with live deployment links
+- Project cards with verified public links where available
 - Search-engine metadata and Schema.org profile data
 - Professional experience timeline
 - Rule-based portfolio assistant
