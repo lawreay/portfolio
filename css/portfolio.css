@@ -106,6 +106,24 @@
 .hero-parallax { transition: transform 0.2s linear; will-change: transform; }
 html { scroll-behavior: smooth; }
 
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
+  align-items: center;
+}
+
+.footer-content a {
+  color: #cbd5e1;
+  text-decoration: none;
+}
+
+.footer-content a:hover,
+.footer-content a:focus-visible {
+  color: #fff;
+  text-decoration: underline;
+}
+
 .mini-chat-button {
   position: fixed;
   right: 20px;
