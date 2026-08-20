@@ -145,8 +145,36 @@ body.font-sans li {
   background: #e9eef1 !important;
 }
 
+.project-card-logo {
+  display: block;
+  width: min(78%, 260px);
+  height: 150px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
 .project-image {
   height: 210px;
+}
+
+.project-link {
+  display: inline-block;
+  padding: .65rem 1rem;
+  background: var(--navy) !important;
+  color: #fff !important;
+  border: 2px solid var(--navy);
+  border-radius: .25rem;
+  font-weight: 700;
+  text-decoration: none;
+  line-height: 1.2;
+  box-shadow: 0 2px 5px rgba(16, 38, 56, .2);
+}
+
+.project-link:hover,
+.project-link:focus-visible {
+  background: var(--amber) !important;
+  border-color: var(--amber);
+  color: #fff !important;
 }
 
 .text-purple-600,
