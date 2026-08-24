@@ -33,6 +33,8 @@
 
 .navbar nav {
   padding: 0.75rem 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -41,6 +43,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .logo-container {
@@ -155,9 +158,24 @@
 }
 
 @media screen and (max-width: 1024px) {
+  .navbar nav {
+    padding: 0.65rem 1rem;
+  }
+
+  .nav-container {
+    min-height: 44px;
+    gap: 0.75rem;
+  }
+
   .hamburger {
     display: block;
     z-index: 1001;
+    position: relative;
+    right: auto;
+    top: auto;
+    flex: 0 0 auto;
+    padding: 8px;
+    margin: 0;
   }
 
   .nav-container {
@@ -169,28 +187,42 @@
   }
 
   .nav-logo {
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
   }
 
   .logo-text {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+
+  .nav-actions {
+    margin-left: auto;
+  }
+
+  .back-to-top {
+    width: 34px;
+    height: 34px;
   }
 
   .navbar nav ul {
     display: none;
     flex-direction: column;
-    position: fixed;
-    top: 0;
+    position: absolute;
+    top: calc(100% + 0.5rem);
     left: 0;
+    right: 0;
     width: 100%;
-    height: 100vh;
+    width: auto;
+    max-height: calc(100vh - 5rem);
     background: rgba(15, 23, 42, 0.98);
-    padding: 4rem 0;
-    gap: 0.75rem;
-    text-align: center;
-    z-index: 1000;
+    padding: 0.75rem;
+    gap: 0.25rem;
+    text-align: left;
+    z-index: 1002;
     overflow-y: auto;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 12px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
   }
 
   .navbar nav ul.active {
@@ -200,7 +232,7 @@
 
   .navbar nav ul li {
     width: 100%;
-    padding: 0.5rem 2rem;
+    padding: 0;
   }
 
   .navbar nav ul li a {
@@ -210,7 +242,8 @@
 
   .navbar nav ul li .header_btn {
     width: 100%;
-    padding: 0.75rem;
+    padding: 0.7rem 0.8rem;
+    text-align: left;
   }
 
   @keyframes slideIn {
