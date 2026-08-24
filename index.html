@@ -1342,11 +1342,11 @@
   });
 </script>
 
-<!-- Mini floating chatbot (client-side, rule-based) -->
+<!-- Mini floating chatbot (AI-enhanced with an offline fallback) -->
 <div id="mini-chat" aria-hidden="false">
   <div id="mini-chat-panel" class="mini-chat-panel" role="dialog" aria-label="Site assistant">
     <div class="mini-chat-header">
-      <div class="mini-chat-title"><i class="bi bi-stars" aria-hidden="true"></i> Lawreay AI <span aria-hidden="true">Online</span></div>
+      <div class="mini-chat-title"><i class="bi bi-stars" aria-hidden="true"></i> Lawreay AI <span aria-hidden="true">AI + Offline</span></div>
       <div>
         <button id="mini-chat-close" title="Close" style="background:transparent;border:none;color:rgba(255,255,255,0.8);font-size:18px;cursor:pointer"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
       </div>
@@ -1379,6 +1379,7 @@
     const body = document.getElementById('mini-chat-body');
 
 
+    const AI_ENDPOINT = 'https://text.pollinations.ai/openai';
     const kb = [
       { id: 'identity', keys: ['who is lawrence', 'who are you', 'about you', 'about lawrence', 'background'], answer: "Lawrence Phuka Chikapa is a Malawian software developer and systems builder based in Ntcheu. He is also an ICT Officer, educator, and creative technologist who builds practical digital tools for real organisations." },
       { id: 'location', keys: ['where are you', 'where is lawrence', 'location', 'based'], answer: "Lawrence is based in Ntcheu, Malawi, and builds solutions for education, administration, business, and community organisations." },
@@ -1412,6 +1413,13 @@
         if (previous) return `${previous.answer} You can ask about another part of Lawrence’s work, such as his tech stack, experience, or projects.`;
       }
 
+      if ((t.includes('where') || t.includes('based')) && (t.includes('what') || t.includes('do'))) {
+        const work = kb.find(item => item.id === 'work');
+        const location = kb.find(item => item.id === 'location');
+        lastTopic = 'location';
+        return `${work.answer} ${location.answer}`;
+      }
+
       let best = null;
       let bestScore = 0;
       for (const item of kb) {
@@ -1432,16 +1440,63 @@
       return "I don’t have that detail yet, but I can answer questions about Lawrence’s background, location, experience, skills, projects, Learn360, HRMS, Ntonda Quiz, CV, or contact details.";
     }
 
-    function handleSend(text){
+    function portfolioContext() {
+      return kb.map(item => `${item.id}: ${item.answer}`).join('\n');
+    }
+
+    async function askFreeAi(question) {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 7000);
+      try {
+        const response = await fetch(AI_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          signal: controller.signal,
+          body: JSON.stringify({
+            model: 'openai',
+            temperature: 0.2,
+            max_tokens: 180,
+            messages: [
+              {
+                role: 'system',
+                content: `You are Lawreay AI, the helpful portfolio assistant for Lawrence Phuka Chikapa. Answer clearly and warmly in first or third person as appropriate. Use ONLY the facts in the portfolio context below. Never invent personal details, dates, clients, prices, links, or availability. If the answer is not in the context, say you do not have that detail and suggest a relevant topic. Keep answers under 90 words.\n\nPORTFOLIO CONTEXT:\n${portfolioContext()}`
+              },
+              { role: 'user', content: question }
+            ]
+          })
+        });
+        if (!response.ok) throw new Error(`AI request failed: ${response.status}`);
+        const data = await response.json();
+        const answer = data.choices?.[0]?.message?.content || data.response || data.text;
+        if (!answer || typeof answer !== 'string') throw new Error('AI returned no answer');
+        return answer.trim();
+      } finally {
+        clearTimeout(timeout);
+      }
+    }
+
+    async function handleSend(text){
       if (!text) return;
       addMessage(text,'user');
-      const ans = findAnswer(text);
       const typing = document.createElement('div');
       typing.className = 'mini-chat-message bot mini-chat-typing';
-      typing.textContent = 'Thinking...';
+      typing.textContent = 'Thinking with AI...';
       body.appendChild(typing);
       body.scrollTop = body.scrollHeight;
-      setTimeout(()=> { typing.remove(); addMessage(ans,'bot'); }, 450);
+      sendBtn.disabled = true;
+      input.disabled = true;
+      try {
+        const answer = await askFreeAi(text);
+        typing.remove();
+        addMessage(answer, 'bot');
+      } catch (error) {
+        typing.remove();
+        addMessage(`${findAnswer(text)}\n\n(AI is unavailable right now, so I answered from the portfolio.)`, 'bot');
+      } finally {
+        sendBtn.disabled = false;
+        input.disabled = false;
+        input.focus();
+      }
     }
 
 
