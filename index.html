@@ -1346,7 +1346,7 @@
 <div id="mini-chat" aria-hidden="false">
   <div id="mini-chat-panel" class="mini-chat-panel" role="dialog" aria-label="Site assistant">
     <div class="mini-chat-header">
-      <div class="mini-chat-title">Ask about Lawrence or this site</div>
+      <div class="mini-chat-title"><i class="bi bi-stars" aria-hidden="true"></i> Lawreay AI <span aria-hidden="true">Online</span></div>
       <div>
         <button id="mini-chat-close" title="Close" style="background:transparent;border:none;color:rgba(255,255,255,0.8);font-size:18px;cursor:pointer"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
       </div>
@@ -1354,14 +1354,14 @@
     <div id="mini-chat-body" class="mini-chat-body" role="log" aria-live="polite"></div>
     <div style="padding:0 12px 12px;">
       <div class="mini-chat-suggestions">
-        <div class="mini-chat-suggestion" data-q="who are you">Who are you?</div>
-        <div class="mini-chat-suggestion" data-q="projects">Projects</div>
-        <div class="mini-chat-suggestion" data-q="learn360">About Learn360</div>
-        <div class="mini-chat-suggestion" data-q="contact">Contact</div>
+        <button class="mini-chat-suggestion" type="button" data-q="Who is Lawrence?">Who is Lawrence?</button>
+        <button class="mini-chat-suggestion" type="button" data-q="What technologies do you use?">Tech stack</button>
+        <button class="mini-chat-suggestion" type="button" data-q="Tell me about Learn360">Learn360</button>
+        <button class="mini-chat-suggestion" type="button" data-q="How can I contact you?">Contact</button>
       </div>
       <div class="mini-chat-input">
-        <textarea id="mini-chat-input" placeholder="Type a question (eg. 'Tell me about Learn360')"></textarea>
-        <button id="mini-chat-send">Send</button>
+        <textarea id="mini-chat-input" aria-label="Ask Lawreay AI a question" placeholder="Ask me about Lawrence..."></textarea>
+        <button id="mini-chat-send" aria-label="Send question"><i class="bi bi-arrow-up" aria-hidden="true"></i></button>
       </div>
     </div>
   </div>
@@ -1380,12 +1380,21 @@
 
 
     const kb = [
-      { keys: ['who','you','about me'], answer: "I'm Lawrence Phuka Chikapa — an ICT Educator and Creative Technologist. I build Learn360 and create websites, animations, and educational content." },
-      { keys: ['learn360','learn 360'], answer: "Learn360 is a free digital education platform I founded to provide courses and videos for learners across Malawi. Visit learn360.free.nf for the demo." },
-      { keys: ['projects','portfolio','work'], answer: "You can view featured projects on this site — Learn360, Ntonda Quiz System, and various animation projects. Check the Projects section for details." },
-      { keys: ['contact','email','whatsapp'], answer: "You can email me at phukal@mau.adventist.org or contact me on WhatsApp at +265 993 147 700. There is also a contact section on this page." },
-      { keys: ['skills','competencies','core'], answer: "Core competencies include Web Application Development, Network Security, UI/UX Design, Media Production, Educational Tech, and more. Click any skill to read details." }
+      { id: 'identity', keys: ['who is lawrence', 'who are you', 'about you', 'about lawrence', 'background'], answer: "Lawrence Phuka Chikapa is a Malawian software developer and systems builder based in Ntcheu. He is also an ICT Officer, educator, and creative technologist who builds practical digital tools for real organisations." },
+      { id: 'location', keys: ['where are you', 'where is lawrence', 'location', 'based'], answer: "Lawrence is based in Ntcheu, Malawi, and builds solutions for education, administration, business, and community organisations." },
+      { id: 'work', keys: ['what do you do', 'what does lawrence do', 'services', 'hire', 'build'], answer: "He builds web applications, administrative systems, education technology, identity and document workflows, APIs, automation, and developer tools. He is open to useful projects and technical conversations." },
+      { id: 'experience', keys: ['experience', 'career', 'job', 'work history', 'currently'], answer: "Lawrence is an IT Officer and Software Developer at Malawi Adventist University. He is also Founder and Lead Developer of Learn360, and works on freelance and community technology projects." },
+      { id: 'skills', keys: ['skills', 'technologies', 'tech stack', 'technology', 'programming language', 'code'], answer: "His main tools include PHP, Python, JavaScript, TypeScript, MySQL, SQL, REST APIs, HTML, CSS, Bootstrap, Git, GitHub, Composer, PHPUnit, and Linux." },
+      { id: 'learn360', keys: ['learn360', 'learn 360', 'digital education', 'online learning'], answer: "Learn360 is a free digital education platform founded by Lawrence for learners across Malawi. It includes courses, video lessons, and interactive content. The public project link is learn360.free.nf, though its status may change." },
+      { id: 'projects', keys: ['projects', 'portfolio', 'work', 'built', 'apps'], answer: "Featured work includes Learn360, the Ntonda Online Quiz System, educational animation content, a Malawi developer-data project, an HR Management System, identity and billing systems, and a browser-based website builder." },
+      { id: 'hrms', keys: ['hrms', 'human resource', 'employee system', 'malawi adventist'], answer: "The HR Management System is a private PHP and MySQL system for employee administration, users and roles, permissions, branches, leave, performance management, audit logging, and security monitoring." },
+      { id: 'quiz', keys: ['ntonda', 'quiz', 'assessment'], answer: "Ntonda Online Quiz System is a PHP, MySQL, and JavaScript assessment platform with instant feedback and progress tracking across multiple subjects." },
+      { id: 'education', keys: ['education', 'educator', 'teach', 'animation', 'creative'], answer: "Alongside software development, Lawrence creates educational content and animations that explain science, mathematics, and technology in an accessible way." },
+      { id: 'contact', keys: ['contact', 'email', 'whatsapp', 'phone', 'reach'], answer: "You can email Lawrence at phukal@mau.adventist.org or reach him on WhatsApp at +265 993 147 700. You can also download his CV from the Contact section." },
+      { id: 'cv', keys: ['cv', 'resume', 'curriculum vitae'], answer: "Lawrence's CV is available to download in the Contact section of this portfolio." },
+      { id: 'greeting', keys: ['hello', 'hi', 'hey', 'good morning', 'good afternoon', 'good evening'], answer: "Hello. I’m Lawreay AI, the portfolio assistant. Ask me about Lawrence’s experience, skills, projects, or how to contact him." }
     ];
+    let lastTopic = '';
 
     function addMessage(text, who){
       const el = document.createElement('div');
@@ -1396,22 +1405,43 @@
     }
 
     function findAnswer(q){
-      const t = q.toLowerCase();
-      for (const item of kb){
-        for (const k of item.keys){
-          if (t.includes(k)) return item.answer;
-        }
+      const t = q.toLowerCase().replace(/[^a-z0-9\s]/g, ' ');
+      const followUp = /^(what about|tell me more|more about|and)\b/.test(t);
+      if (followUp && lastTopic) {
+        const previous = kb.find(item => item.id === lastTopic);
+        if (previous) return `${previous.answer} You can ask about another part of Lawrence’s work, such as his tech stack, experience, or projects.`;
       }
 
-      return "I can tell you about Lawrence (background, projects, contact) or the Learn360 platform. Try: 'Who are you?', 'Projects', 'Learn360', or 'Contact'.";
+      let best = null;
+      let bestScore = 0;
+      for (const item of kb) {
+        const score = item.keys.reduce((total, key) => {
+          if (t.includes(key)) return total + (key.includes(' ') ? 3 : 1);
+          return total;
+        }, 0);
+        if (score > bestScore) {
+          best = item;
+          bestScore = score;
+        }
+      }
+      if (best) {
+        lastTopic = best.id;
+        return best.answer;
+      }
+
+      return "I don’t have that detail yet, but I can answer questions about Lawrence’s background, location, experience, skills, projects, Learn360, HRMS, Ntonda Quiz, CV, or contact details.";
     }
 
     function handleSend(text){
       if (!text) return;
       addMessage(text,'user');
       const ans = findAnswer(text);
-
-      setTimeout(()=> addMessage(ans,'bot'), 500);
+      const typing = document.createElement('div');
+      typing.className = 'mini-chat-message bot mini-chat-typing';
+      typing.textContent = 'Thinking...';
+      body.appendChild(typing);
+      body.scrollTop = body.scrollHeight;
+      setTimeout(()=> { typing.remove(); addMessage(ans,'bot'); }, 450);
     }
 
 
@@ -1436,7 +1466,7 @@
 
 
     setTimeout(()=>{
-      addMessage("Hi — I'm a quick site assistant. Ask me about Lawrence, projects, skills or contact details.", 'bot');
+      addMessage("Hi — I’m Lawreay AI. Ask me anything about Lawrence’s background, skills, projects, or contact details.", 'bot');
     }, 1200);
   })();
 </script>

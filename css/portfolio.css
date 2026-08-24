@@ -154,7 +154,14 @@ html { scroll-behavior: smooth; }
 .mini-chat-input textarea { flex: 1; resize: none; padding: 8px; border-radius: 8px; background: transparent; color: #fff; border: 1px solid rgba(255, 255, 255, 0.233); min-height: 40px; }
 .mini-chat-input button { padding: 8px 10px; border-radius: 4px; background: #d97706; color: #fff; border: none; cursor: pointer; }
 .mini-chat-suggestions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
-.mini-chat-suggestion { background-color: rgba(74, 104, 236, 0.747); padding: 6px 8px; border-radius: 999px; font-size: 13px; cursor: pointer; }
+.mini-chat-suggestion { background-color: rgba(74, 104, 236, 0.747); color: #fff; border: 1px solid rgba(255, 255, 255, 0.16); padding: 6px 8px; border-radius: 999px; font: inherit; font-size: 13px; cursor: pointer; }
+.mini-chat-suggestion:hover, .mini-chat-suggestion:focus-visible { background-color: #d97706; border-color: #d97706; }
+.mini-chat-typing { opacity: 0.72; animation: chatPulse 1s ease-in-out infinite; }
+
+@keyframes chatPulse {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 1; }
+}
 
 @media (max-width: 600px) {
   .glass-card { padding: 20px; }
