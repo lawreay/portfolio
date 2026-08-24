@@ -1379,23 +1379,8 @@
     const body = document.getElementById('mini-chat-body');
 
 
-    const AI_ENDPOINT = 'https://text.pollinations.ai/openai';
-    const kb = [
-      { id: 'identity', keys: ['who is lawrence', 'who are you', 'about you', 'about lawrence', 'background'], answer: "Lawrence Phuka Chikapa is a Malawian software developer and systems builder based in Ntcheu. He is also an ICT Officer, educator, and creative technologist who builds practical digital tools for real organisations." },
-      { id: 'location', keys: ['where are you', 'where is lawrence', 'location', 'based'], answer: "Lawrence is based in Ntcheu, Malawi, and builds solutions for education, administration, business, and community organisations." },
-      { id: 'work', keys: ['what do you do', 'what does lawrence do', 'services', 'hire', 'build'], answer: "He builds web applications, administrative systems, education technology, identity and document workflows, APIs, automation, and developer tools. He is open to useful projects and technical conversations." },
-      { id: 'experience', keys: ['experience', 'career', 'job', 'work history', 'currently'], answer: "Lawrence is an IT Officer and Software Developer at Malawi Adventist University. He is also Founder and Lead Developer of Learn360, and works on freelance and community technology projects." },
-      { id: 'skills', keys: ['skills', 'technologies', 'tech stack', 'technology', 'programming language', 'code'], answer: "His main tools include PHP, Python, JavaScript, TypeScript, MySQL, SQL, REST APIs, HTML, CSS, Bootstrap, Git, GitHub, Composer, PHPUnit, and Linux." },
-      { id: 'learn360', keys: ['learn360', 'learn 360', 'digital education', 'online learning'], answer: "Learn360 is a free digital education platform founded by Lawrence for learners across Malawi. It includes courses, video lessons, and interactive content. The public project link is learn360.free.nf, though its status may change." },
-      { id: 'projects', keys: ['projects', 'portfolio', 'work', 'built', 'apps'], answer: "Featured work includes Learn360, the Ntonda Online Quiz System, educational animation content, a Malawi developer-data project, an HR Management System, identity and billing systems, and a browser-based website builder." },
-      { id: 'hrms', keys: ['hrms', 'human resource', 'employee system', 'malawi adventist'], answer: "The HR Management System is a private PHP and MySQL system for employee administration, users and roles, permissions, branches, leave, performance management, audit logging, and security monitoring." },
-      { id: 'quiz', keys: ['ntonda', 'quiz', 'assessment'], answer: "Ntonda Online Quiz System is a PHP, MySQL, and JavaScript assessment platform with instant feedback and progress tracking across multiple subjects." },
-      { id: 'education', keys: ['education', 'educator', 'teach', 'animation', 'creative'], answer: "Alongside software development, Lawrence creates educational content and animations that explain science, mathematics, and technology in an accessible way." },
-      { id: 'contact', keys: ['contact', 'email', 'whatsapp', 'phone', 'reach'], answer: "You can email Lawrence at phukal@mau.adventist.org or reach him on WhatsApp at +265 993 147 700. You can also download his CV from the Contact section." },
-      { id: 'cv', keys: ['cv', 'resume', 'curriculum vitae'], answer: "Lawrence's CV is available to download in the Contact section of this portfolio." },
-      { id: 'greeting', keys: ['hello', 'hi', 'hey', 'good morning', 'good afternoon', 'good evening'], answer: "Hello. I’m Lawreay AI, the portfolio assistant. Ask me about Lawrence’s experience, skills, projects, or how to contact him." }
-    ];
-    let lastTopic = '';
+    const AI_ENDPOINT = 'api/chat.php';
+    const conversation = [];
 
     function addMessage(text, who){
       const el = document.createElement('div');
@@ -1405,43 +1390,17 @@
       body.scrollTop = body.scrollHeight;
     }
 
-    function findAnswer(q){
-      const t = q.toLowerCase().replace(/[^a-z0-9\s]/g, ' ');
-      const followUp = /^(what about|tell me more|more about|and)\b/.test(t);
-      if (followUp && lastTopic) {
-        const previous = kb.find(item => item.id === lastTopic);
-        if (previous) return `${previous.answer} You can ask about another part of Lawrence’s work, such as his tech stack, experience, or projects.`;
-      }
-
-      if ((t.includes('where') || t.includes('based')) && (t.includes('what') || t.includes('do'))) {
-        const work = kb.find(item => item.id === 'work');
-        const location = kb.find(item => item.id === 'location');
-        lastTopic = 'location';
-        return `${work.answer} ${location.answer}`;
-      }
-
-      let best = null;
-      let bestScore = 0;
-      for (const item of kb) {
-        const score = item.keys.reduce((total, key) => {
-          if (t.includes(key)) return total + (key.includes(' ') ? 3 : 1);
-          return total;
-        }, 0);
-        if (score > bestScore) {
-          best = item;
-          bestScore = score;
-        }
-      }
-      if (best) {
-        lastTopic = best.id;
-        return best.answer;
-      }
-
-      return "I don’t have that detail yet, but I can answer questions about Lawrence’s background, location, experience, skills, projects, Learn360, HRMS, Ntonda Quiz, CV, or contact details.";
-    }
-
     function portfolioContext() {
-      return kb.map(item => `${item.id}: ${item.answer}`).join('\n');
+      return `Name: Lawrence Phuka Chikapa (also known as Lawreay)
+Location: Ntcheu, Malawi
+Role: Software Developer, Systems Builder, ICT Officer, educator, and creative technologist
+Current work: IT Officer and Software Developer at Malawi Adventist University; Founder and Lead Developer of Learn360
+Skills: PHP, Python, JavaScript, TypeScript, MySQL, SQL, REST APIs, HTML, CSS, Bootstrap, Git, GitHub, Composer, PHPUnit, and Linux
+Projects: Learn360, Ntonda Online Quiz System, educational animation content, Malawi developer-data analysis, HR Management System, identity and billing systems, and a browser-based website builder
+Learn360: A free digital education platform founded by Lawrence for learners across Malawi, with courses, video lessons, and interactive content. Public link: learn360.free.nf
+HRMS: A private PHP and MySQL system for employee administration, roles, permissions, branches, leave, performance, audit logging, and security monitoring
+Ntonda Quiz: A PHP, MySQL, and JavaScript assessment platform with instant feedback and progress tracking
+Contact: phukal@mau.adventist.org; WhatsApp +265 993 147 700; CV available in the Contact section`;
     }
 
     async function askFreeAi(question) {
@@ -1461,6 +1420,7 @@
                 role: 'system',
                 content: `You are Lawreay AI, the helpful portfolio assistant for Lawrence Phuka Chikapa. Answer clearly and warmly in first or third person as appropriate. Use ONLY the facts in the portfolio context below. Never invent personal details, dates, clients, prices, links, or availability. If the answer is not in the context, say you do not have that detail and suggest a relevant topic. Keep answers under 90 words.\n\nPORTFOLIO CONTEXT:\n${portfolioContext()}`
               },
+              ...conversation,
               { role: 'user', content: question }
             ]
           })
@@ -1487,11 +1447,13 @@
       input.disabled = true;
       try {
         const answer = await askFreeAi(text);
+        conversation.push({ role: 'user', content: text }, { role: 'assistant', content: answer });
+        conversation.splice(0, Math.max(0, conversation.length - 10));
         typing.remove();
         addMessage(answer, 'bot');
       } catch (error) {
         typing.remove();
-        addMessage(`${findAnswer(text)}\n\n(AI is unavailable right now, so I answered from the portfolio.)`, 'bot');
+        addMessage('I could not reach the AI service right now. Please try again in a moment.', 'bot');
       } finally {
         sendBtn.disabled = false;
         input.disabled = false;

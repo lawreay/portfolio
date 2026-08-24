@@ -143,6 +143,8 @@ html { scroll-behavior: smooth; }
   display: none;
 }
 
+#mini-chat { display: none; }
+
 .mini-chat-panel.open { display: block; }
 .mini-chat-header { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; border-bottom: 1px solid #fff; }
 .mini-chat-title { font-weight: 700; font-size: 14px; }
