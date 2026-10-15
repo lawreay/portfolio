@@ -56,6 +56,7 @@
   <style>@view-transition { navigation: auto; }</style>
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/images.css">
+  <link rel="stylesheet" href="css/portfolio-3d.css">
  </head>
 <body class="font-sans">
   <div id="scroll-progress" aria-hidden="true" style="position:fixed;top:0;left:0;height:4px;width:0;background:#d97706;z-index:4000;transition:width .12s linear"></div>
@@ -88,49 +89,32 @@
     </nav>
   </header>
 
-  <div id="portfolio-container"><!-- Hero Section -->
-  <section class="hero-gradient text-white min-h-screen flex items-center justify-center px-6 py-20 reveal-on-scroll hero-parallax mt-16">
-    <div class="max-w-4xl text-center">
-        <div class="mb-8">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <img class="my_PP reveal-on-scroll icon-anim" src="assets/images/MYphoto.png" alt="Lawrence Phuka Chikapa">
-
-
-
-
-     </div>
-     <h1 id="hero-name" class="text-5xl md:text-7xl font-bold mb-4">Lawrence Phuka Chikapa</h1>
-    <p id="hero-title" class="text-2xl md:text-3xl mb-6 text-blue-100">Software Developer &amp; Systems Builder</p>
-    <p id="hero-tagline" class="text-xl md:text-2xl mb-8 text-blue-50">I build practical software systems that solve real operational problems.</p>
-    <p class="text-lg text-blue-100 mb-8"><i class="bi bi-geo-alt" aria-hidden="true"></i> Ntcheu, Malawi</p>
-    <div class="flex gap-4 justify-center flex-wrap"><a href="#projects" class="px-8 py-3 bg-white text-blue-900 rounded-full font-semibold hover:bg-blue-50 transition-all">View My Work</a> <a href="#contact" class="px-8 py-3 bg-transparent border-2 border-white text-white rounded-full font-semibold hover:bg-white/10 transition-all">Get in Touch</a>
-     </div>
+  <div id="portfolio-container"><!-- Portfolio hero: editorial layout with a scroll-reactive 3D object -->
+  <section id="home" class="portfolio-hero hero-gradient" aria-labelledby="hero-name">
+    <canvas id="portfolio-scene" aria-label="Interactive rotating 3D glass cube. Drag to rotate." role="img"></canvas>
+    <div class="hero-grain" aria-hidden="true"></div>
+    <div class="hero-shell">
+      <div class="hero-kicker"><span class="status-dot"></span> SOFTWARE DEVELOPER · SYSTEMS BUILDER · MALAWI</div>
+      <div class="hero-copy">
+        <p class="hero-eyebrow">Practical software. Real-world problems.</p>
+        <h1 id="hero-name">I build systems<br><span>that move work forward.</span></h1>
+        <p id="hero-title" class="hero-role">Lawrence Phuka Chikapa <span>/ Lawreay</span></p>
+        <p id="hero-tagline" class="hero-summary">From institutional workflows to learning platforms, I turn messy manual processes into useful, maintainable digital tools.</p>
+        <div class="hero-actions">
+          <a class="hero-button hero-button-primary" href="#projects">Explore selected work <span aria-hidden="true">↘</span></a>
+          <a class="hero-button hero-button-secondary" href="#contact">Contact me <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-proof">
+          <div><strong>PHP · MySQL</strong><span>Business systems</span></div>
+          <div><strong>Education tech</strong><span>Learning & assessment</span></div>
+          <div><strong>Malawi</strong><span>Built around real constraints</span></div>
+        </div>
+      </div>
+      <div class="hero-object-label" aria-hidden="true"><span>INTERACTIVE OBJECT</span><span>DRAG TO ROTATE · SCROLL TO EXPLORE</span></div>
+      <a href="#about" class="hero-scroll-cue"><span class="scroll-line"></span><span>Scroll to explore</span></a>
+      <div class="hero-index" aria-hidden="true">01 <span>/ 04</span></div>
     </div>
-
-
-   </section><!-- About Section -->
+  </section><!-- About Section -->
   <section id="about" class="section-gradient py-20 px-6 reveal-on-scroll">
     <div class="max-w-6xl mx-auto">
      <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 gradient-text">About Me</h2>
@@ -1552,6 +1536,7 @@ Contact: phukal@mau.adventist.org; WhatsApp +265 993 147 700; CV available in th
 
   })();
 </script>
+  <script type="module" src="js/portfolio-3d.js"></script>
 </body>
 </html>
 
