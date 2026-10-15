@@ -56,9 +56,8 @@
   <style>@view-transition { navigation: auto; }</style>
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/images.css">
-  <link rel="stylesheet" href="css/portfolio-3d.css">
-  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js"}}</script>
- </head>
+    <link rel="stylesheet" href="css/portfolio-editorial.css">
+   </head>
 <body class="font-sans">
   <div id="scroll-progress" aria-hidden="true" style="position:fixed;top:0;left:0;height:4px;width:0;background:#d97706;z-index:4000;transition:width .12s linear"></div>
 
@@ -90,30 +89,33 @@
     </nav>
   </header>
 
-  <div id="portfolio-container"><!-- Portfolio hero: editorial layout with a scroll-reactive 3D object -->
+  <div id="portfolio-container">
   <section id="home" class="portfolio-hero hero-gradient" aria-labelledby="hero-name">
-    <canvas id="portfolio-scene" aria-label="Interactive rotating 3D glass cube. Drag to rotate." role="img"></canvas>
-    <div class="hero-grain" aria-hidden="true"></div>
+    <div class="hero-paper-grid" aria-hidden="true"></div>
     <div class="hero-shell">
-      <div class="hero-kicker"><span class="status-dot"></span> SOFTWARE DEVELOPER · SYSTEMS BUILDER · MALAWI</div>
       <div class="hero-copy">
-        <p class="hero-eyebrow">Practical software. Real-world problems.</p>
-        <h1 id="hero-name">I build systems<br><span>that move work forward.</span></h1>
-        <p id="hero-title" class="hero-role">Lawrence Phuka Chikapa <span>/ Lawreay</span></p>
-        <p id="hero-tagline" class="hero-summary">From institutional workflows to learning platforms, I turn messy manual processes into useful, maintainable digital tools.</p>
+        <p class="hero-kicker"><span class="hero-kicker-mark">L.</span> INDEPENDENT DEVELOPER · MALAWI</p>
+        <p class="hero-eyebrow">I make the complicated feel simple.</p>
+        <h1 id="hero-name">Software for<br><span>the work behind</span><br>the work.</h1>
+        <p id="hero-title" class="hero-role">Lawrence Phuka Chikapa <span>· Lawreay</span></p>
+        <p id="hero-tagline" class="hero-summary">I build practical digital systems for schools, teams and organisations, especially where time, budgets and infrastructure are real constraints.</p>
         <div class="hero-actions">
-          <a class="hero-button hero-button-primary" href="#projects">Explore selected work <span aria-hidden="true">↘</span></a>
-          <a class="hero-button hero-button-secondary" href="#contact">Contact me <span aria-hidden="true">↗</span></a>
+          <a class="hero-button hero-button-primary" href="#projects">See what I’ve built <span aria-hidden="true">↘</span></a>
+          <a class="hero-text-link" href="#contact">Have a problem to solve? <span aria-hidden="true">↗</span></a>
         </div>
-        <div class="hero-proof">
-          <div><strong>PHP · MySQL</strong><span>Business systems</span></div>
-          <div><strong>Education tech</strong><span>Learning & assessment</span></div>
-          <div><strong>Malawi</strong><span>Built around real constraints</span></div>
-        </div>
+        <div class="hero-footnote"><span class="hero-footnote-line"></span><span>PHP · MySQL · JavaScript · Systems thinking</span></div>
       </div>
-      <div class="hero-object-label" aria-hidden="true"><span>INTERACTIVE OBJECT</span><span>DRAG TO ROTATE · SCROLL TO EXPLORE</span></div>
-      <a href="#about" class="hero-scroll-cue"><span class="scroll-line"></span><span>Scroll to explore</span></a>
-      <div class="hero-index" aria-hidden="true">01 <span>/ 04</span></div>
+      <div class="hero-portrait-wrap">
+        <div class="hero-photo-frame">
+          <img class="hero-portrait" src="assets/images/MYphoto.png" alt="Portrait of Lawrence Phuka Chikapa, known as Lawreay" fetchpriority="high">
+          <span class="hero-photo-corner hero-photo-corner-tl" aria-hidden="true"></span>
+          <span class="hero-photo-corner hero-photo-corner-br" aria-hidden="true"></span>
+        </div>
+        <div class="hero-photo-caption"><span>01 / THE PERSON</span><span>Ntcheu, Malawi</span></div>
+        <div class="hero-side-note" aria-hidden="true">BUILD USEFUL THINGS. KEEP THEM WORKING.</div>
+      </div>
+      <a href="#about" class="hero-scroll-cue"><span class="scroll-line"></span><span>Scroll to know the work</span></a>
+      <div class="hero-index" aria-hidden="true">PORTFOLIO <span>— 2026</span></div>
     </div>
   </section><!-- About Section -->
   <section id="about" class="section-gradient py-20 px-6 reveal-on-scroll">
@@ -1537,7 +1539,6 @@ Contact: phukal@mau.adventist.org; WhatsApp +265 993 147 700; CV available in th
 
   })();
 </script>
-  <script type="module" src="js/portfolio-3d.js"></script>
 </body>
 </html>
 
