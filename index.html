@@ -53,7 +53,12 @@
   <script src="/_sdk/element_sdk.js"></script>
   <link rel="stylesheet" href="css/styles.css">
    <link rel="stylesheet" href="css/portfolio.css">
-  <style>@view-transition { navigation: auto; }</style>
+  <style>
+    @view-transition { navigation: auto; }
+    .tech-chip{display:inline-flex;align-items:center;padding:.45rem .75rem;border:1px solid #e2e8f0;border-radius:999px;background:#f8fafc;color:#17324d;font-size:.875rem;font-weight:600;line-height:1.2}
+    .tech-chip-learning{background:#fff7ed;border-color:#fed7aa;color:#9a3412}
+    #technologies{scroll-margin-top:90px}
+  </style>
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/images.css">
     <link rel="stylesheet" href="css/portfolio-editorial.css">
@@ -81,6 +86,7 @@
           <li><a href="index.html"> <button class="header_btn">Home</button> </a></li>
           <li><a href="#about"> <button class="header_btn">About</button></a></li>
           <li><a href="#capabilities"><button class="header_btn">What I Build</button></a></li>
+          <li><a href="#technologies"><button class="header_btn">Tech Stack</button></a></li>
           <li><a href="#projects"> <button class="header_btn">Projects</button></a></li>
           <li><a href="#experience"><button class="header_btn">Experience</button></a></li>
           <li><a href="#contact"><button class="header_btn">Contact</button></a></li>
@@ -186,7 +192,59 @@
 
 
 
-   </section><!-- Experience Timeline -->
+   </section>
+  <section id="technologies" class="py-20 px-6 bg-white" aria-labelledby="technologies-title">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-center text-sm fw-semibold text-uppercase mb-2" style="letter-spacing:.14em;color:#b45309">Tools of the trade</p>
+      <h2 id="technologies-title" class="text-4xl md:text-5xl font-bold text-center mb-4 gradient-text">Technologies &amp; Languages</h2>
+      <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">The tools I use to build practical web applications and systems, plus technologies I’m currently exploring.</p>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <article class="glass-card h-100 p-6 reveal-on-scroll">
+            <h3 class="h5 text-primary mb-3"><i class="bi bi-window" aria-hidden="true"></i> Frontend</h3>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="tech-chip">HTML5</span><span class="tech-chip">CSS3</span><span class="tech-chip">JavaScript</span><span class="tech-chip">React</span><span class="tech-chip">Bootstrap</span>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <article class="glass-card h-100 p-6 reveal-on-scroll">
+            <h3 class="h5 text-primary mb-3"><i class="bi bi-code-slash" aria-hidden="true"></i> Backend &amp; Frameworks</h3>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="tech-chip">PHP</span><span class="tech-chip">Laravel</span><span class="tech-chip">REST APIs</span>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <article class="glass-card h-100 p-6 reveal-on-scroll">
+            <h3 class="h5 text-primary mb-3"><i class="bi bi-database" aria-hidden="true"></i> Data &amp; Storage</h3>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="tech-chip">MySQL</span><span class="tech-chip">SQL</span>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-lg-6">
+          <article class="glass-card h-100 p-6 reveal-on-scroll">
+            <h3 class="h5 text-primary mb-3"><i class="bi bi-git" aria-hidden="true"></i> Tools &amp; Workflow</h3>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="tech-chip">Git</span><span class="tech-chip">GitHub</span><span class="tech-chip">Composer</span><span class="tech-chip">PHPUnit</span><span class="tech-chip">Linux</span>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-lg-6">
+          <article class="glass-card h-100 p-6 reveal-on-scroll">
+            <h3 class="h5 text-primary mb-3"><i class="bi bi-lightbulb" aria-hidden="true"></i> Currently Exploring</h3>
+            <p class="text-gray-700 mb-3">Next on the workbench. I’ll add more detail as I build and test real projects with these.</p>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="tech-chip tech-chip-learning">Java · Testing soon</span><span class="tech-chip tech-chip-learning">Python · Testing soon</span>
+            </div>
+          </article>
+        </div>
+      </div>
+      <p class="text-center text-gray-600 small mt-6 mb-0">Skills reflect active work and ongoing exploration, not a claim of mastery in every tool.</p>
+    </div>
+  </section>
+<!-- Experience Timeline -->
    <section id="experience" class="py-20 px-6 bg-white">
     <div class="max-w-6xl mx-auto">
      <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Experience Journey</h2>
